@@ -1,0 +1,27 @@
+{
+  "hosting": {
+    "public": ".",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "src/**",
+      "Dockerfile",
+      "nginx.conf.template",
+      "vercel.json",
+      "README.md"
+    ],
+    "headers": [
+      { "source": "**/*.@(css|js|svg|png|jpg|webp|woff2)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }] },
+      { "source": "**/*.html", "headers": [{ "key": "Cache-Control", "value": "public, max-age=300" }] },
+      { "source": "**", "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+      ] }
+    ],
+    "rewrites": [ { "source": "/", "destination": "/index.html" } ]
+  }
+}
