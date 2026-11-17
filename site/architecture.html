@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Architecture · Unobvious OS</title><meta name="description" content="How Unobvious OS listens, triages, routes to scoped agents, and asks before it acts."><meta name="theme-color" content="#F6F4EF">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css"></head><body>
+<header class="hdr"><div class="wrap"><a class="brand" href="index.html"><i></i>Unobvious</a>
+<button class="burger" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav class="nav" id="nav"><a data-page="index.html" href="index.html">Lab</a><a data-page="products.html" href="products.html">Products</a><a data-page="architecture.html" href="architecture.html">Architecture</a><a data-page="about.html" href="about.html">About</a><a class="pill" href="about.html#contact">Get in touch</a></nav></div><div class="progress"></div></header><main>
+<section class="phero"><div class="wrap"><div class="eyebrow mono"><span>Architecture · Unobvious OS</span></div><h1 style="max-width:12em">Quiet by design, and it <em>asks before it acts.</em></h1>
+<p class="lede" style="margin-top:24px">A voice-first pipeline: ambient input, triage, scoped agents, a human approval gate, then execution and memory. Small agents with narrow jobs keep it fast and predictable.</p></div></section>
+<section class="sec tight"><div class="wrap">
+ <div class="flow">
+  <div><i>01</i><b>Listen</b><span>Voice, wearable or chat</span></div><div><i>02</i><b>Triage</b><span>Idea, decision or state</span></div><div><i>03</i><b>Route</b><span>Hierarchical agent router</span></div><div><i>04</i><b>Confirm</b><span>1-tap or voice confirm</span></div><div><i>05</i><b>Act</b><span>Tools and memory</span></div>
+ </div>
+</div></section>
+<section class="sec" style="border-top:1px solid var(--ink)"><div class="wrap">
+ <div class="eyebrow mono reveal"><span>Agents</span></div><h2 class="reveal" style="max-width:14em">Five agents, each with one job.</h2>
+ <div class="agents reveal" role="tablist"></div>
+ <div class="agentdetail reveal"><div><div class="mono">Job</div><p id="ad1"></p></div><div><div class="mono">How</div><p id="ad2"></p></div></div>
+</div></section>
+<section class="sec" style="background:var(--paper-2);border-block:1px solid var(--ink)"><div class="wrap">
+ <div class="eyebrow mono reveal"><span>Guardrails</span></div><h2 class="reveal">Autonomy has tiers.</h2>
+ <div class="tiers reveal"><div><span class="mono"><span class="dot"></span>Tier 1 · Silent</span><p style="margin-top:8px">Sorting notes, saving ideas, queuing reading, protecting rest time, internal research.</p></div>
+ <div><span class="mono"><span class="dot"></span>Tier 2 · You approve</span><p style="margin-top:8px">Sending external messages, changing shared calendar invites, any payment or vendor payout.</p></div></div>
+</div></section>
+<section class="sec"><div class="wrap two">
+ <div class="reveal"><div class="eyebrow mono"><span>Stack</span></div><h2>Designed for <em>Google Cloud.</em></h2><p class="lede" style="margin-top:20px">A multi-agent routing layer, an edge-to-cloud audio relay and a Vertex AI model stack, with a structured store for state and a vector memory for long-term interests.</p></div>
+ <div class="facts reveal"><div><span>Models</span><span>Vertex AI / Gemini</span></div><div><span>Audio in</span><span>Short bursts from phone or BLE wearable</span></div><div><span>Audio out</span><span>Brief calm spoken confirmations</span></div><div><span>State</span><span>Structured store (PostgreSQL)</span></div><div><span>Memory</span><span>Vector and graph, per user</span></div><div><span>Bridge</span><span>Calendar, email, messaging</span></div></div>
+</div></section>
+<section class="cta-big"><div class="wrap reveal"><div class="mono" style="margin-bottom:20px"><span class="dot live"></span>Private alpha</div>
+<h2>Calm technology for people who&rsquo;d rather be <em>looking up.</em></h2>
+<div class="cta"><a class="btn primary" href="about.html#contact">Join the private alpha <span class="ar">→</span></a><a class="btn" href="about.html">Meet the studio <span class="ar">→</span></a></div></div></section>
+
+</main>
+<footer><div class="wrap"><div class="row"><div><a class="brand" href="index.html" style="color:var(--paper)"><i></i>Unobvious</a>
+<p>An independent applied AI, hardware and systems design studio, working on systems, products and institutions that work for the people using them.</p></div>
+<div><a href="index.html">Lab</a><a href="products.html">Products</a><a href="architecture.html">Architecture</a><a href="about.html">About</a></div></div>
+<div class="mega" aria-hidden="true">Unobvious</div>
+<div class="legal mono"><span>© Avaia Innovations (OPC) Private Limited · Bengaluru, Karnataka, India</span><span>Privacy &amp; Terms: coming soon</span></div></div></footer>
+<script src="assets/triage.js"></script><script src="assets/app.js"></script></body></html>
