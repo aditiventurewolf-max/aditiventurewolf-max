@@ -1,21 +1,22 @@
 // Simulated preview: canned examples, no network calls, no API keys.
 (function(){
   const EX=[
-   {label:'Walking, 15s note',text:"Move tomorrow's vendor call, my head's foggy today. Order two more ESP32-S3 boards. Oh — and someone should write about why we stopped reading long essays.",
+   {label:'Brain fog + vendor',text:"Brain fog is heavy today. Push the vendor call to Thursday, order the ESP32-S3 board for the prototype, and queue something philosophical for my evening walk.",
     out:[
-     {k:'STATE_SIGNAL',c:'state',t:'Low energy flagged.',r:'→ Life Planner · protects rest, proposes shifting deep work'},
-     {k:'FIRM_DECISION',c:'firm',t:'Reschedule tomorrow’s vendor call.',r:'→ Comms · drafts polite note · needs your 1-tap'},
-     {k:'FIRM_DECISION',c:'firm',t:'Order 2 × ESP32-S3 boards.',r:'→ Ops · finds supplier · needs your 1-tap before any payment'},
-     {k:'LOOSE_IDEA',c:'',t:'Essay: why we stopped reading long essays.',r:'→ Idea vault · not added to your to-do list'}]},
+     {k:'THOUGHT',c:'state',t:'Brain fog is heavy today.',r:'→ LIFE_PLANNER · afternoon deep-work block converted to recovery'},
+     {k:'DECISION',c:'firm',t:'Push the vendor call to Thursday.',r:'→ COMMS · Thursday slot negotiated automatically'},
+     {k:'DECISION',c:'firm',t:'Order the ESP32-S3 board.',r:'→ PROCUREMENT_OPS · DevKit matched across verified suppliers · 1-tap approval queued'},
+     {k:'IDEA',c:'',t:'Something philosophical for the evening walk.',r:'→ INTEL_CURATOR · long-form essay on Lewis Mumford and tool-making queued for audio'},
+     {k:'SCREEN_TIME',c:'state',t:'Required for this note: 0.0 seconds.',r:''}]},
    {label:'Evening wind-down',text:"Done for today. The pitch deck is mostly there, park the pricing slide for tomorrow. Remind me to call Amma on Sunday.",
     out:[
-     {k:'STATE_SIGNAL',c:'state',t:'End of work window.',r:'→ Life Planner · silences non-urgent notifications'},
-     {k:'LOOSE_IDEA',c:'',t:'Pricing slide: parked for tomorrow.',r:'→ Tomorrow’s first block, nothing else added'},
-     {k:'FIRM_DECISION',c:'firm',t:'Call Amma — Sunday.',r:'→ Calendar · personal event, no approval needed'}]},
+     {k:'THOUGHT',c:'state',t:'End of the work day.',r:'→ LIFE_PLANNER · silences non-urgent notifications'},
+     {k:'IDEA',c:'',t:'Pricing slide: parked for tomorrow.',r:'→ Idea incubator · not added to your to-do list'},
+     {k:'DECISION',c:'firm',t:'Call Amma on Sunday.',r:'→ LIFE_PLANNER · personal calendar block, no approval needed'}]},
    {label:'Reading curiosity',text:"I keep thinking about why slow institutions outlast fast startups. Is there something good on that?",
     out:[
-     {k:'LOOSE_IDEA',c:'',t:'Curiosity: durability of slow institutions.',r:'→ Interest graph · updated'},
-     {k:'FIRM_DECISION',c:'firm',t:'One essay for tomorrow’s morning brief.',r:'→ Curator · 1 high-signal piece, not a feed'}]}
+     {k:'THOUGHT',c:'state',t:'A recurring curiosity.',r:'→ Journal · interest map updated'},
+     {k:'DECISION',c:'firm',t:'One essay for tomorrow\u2019s morning brief.',r:'→ INTEL_CURATOR · 1 high-signal piece, not a feed'}]}
   ];
   const $=s=>document.querySelector(s);
   const chips=$('#chips'),tx=$('#transcript'),out=$('#tri-out'),ap=$('#approve');
@@ -38,7 +39,7 @@
   function reveal(e,id){
     e.out.forEach((o,k)=>setTimeout(()=>{ if(id!==run)return;
       const d=document.createElement('div');d.className='item';
-      d.innerHTML=`<span class="tag ${o.c}">${o.k}</span><p>${o.t}</p><div class="route">${o.r}</div>`;
+      d.innerHTML=`<span class="tag ${o.c}">${o.k}</span><p>${o.t}</p>${o.r?`<div class="route">${o.r}</div>`:''}`;
       out.appendChild(d);requestAnimationFrame(()=>d.classList.add('in'));
       if(k===e.out.length-1)setTimeout(()=>{ if(id!==run)return;
         const ext=e.out.filter(x=>/1-tap/.test(x.r)).length;
