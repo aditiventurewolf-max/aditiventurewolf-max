@@ -6,8 +6,7 @@
      {k:'THOUGHT',c:'state',t:'Running on empty.',r:'→ The afternoon becomes recovery time'},
      {k:'DECISION',c:'firm',t:'Move the three o\u2019clock to Thursday.',r:'→ A polite note is drafted · needs your OK'},
      {k:'DECISION',c:'firm',t:'Book the dentist.',r:'→ Added to tomorrow morning, nothing sent'},
-     {k:'IDEA',c:'',t:'Something good to listen to.',r:'→ An essay is queued for your walk'},
-     {k:'SCREEN TIME',c:'state',t:'Needed for this note: 0.0 seconds.',r:''}]},
+     {k:'IDEA',c:'',t:'Something good to listen to.',r:'→ An essay is queued for your walk'}]},
    {label:'End of the day',text:"That's enough for today. The slides are nearly done, leave the pricing slide for tomorrow. Remind me to call Mum on Sunday.",
     out:[
      {k:'THOUGHT',c:'state',t:'End of the work day.',r:'→ Non-urgent notifications go quiet'},

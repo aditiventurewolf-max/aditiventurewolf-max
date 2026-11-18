@@ -1,2 +1,5 @@
-<section class="sec" style="padding-top:0"><div class="wrap"><div class="join reveal"><div><div class="eyebrow">Private alpha</div><h2 style="margin-top:14px">Want an early look?</h2><p>The alpha is small on purpose. Write to us and tell us a little about how you would use it.</p></div>
-<div class="side"><a class="btn primary" href="{{JOIN}}">Ask for early access <span class="ar">→</span></a><span class="addr">{{EMAIL:contact}}</span></div></div></div></section>
+<section class="final"><div class="wrap">
+  <h2>Want an early look?</h2>
+  <a class="btn primary lg" href="{{JOIN}}">Ask for early access</a>
+  <p class="caption">{{EMAIL}}</p>
+</div></section>
