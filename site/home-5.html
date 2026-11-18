@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Unobvious · A lab for making everyday life simpler</title><meta name="description" content="Unobvious is an independent lab in Bengaluru building quiet technology that gives people their attention back."><meta name="theme-color" content="#F6F4EF">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/ui.css"><script>document.documentElement.className+=" js"</script></head><body class="p-home p-serene">
+<header class="hdr" id="hdr"><div class="bar"><a class="brand" href="index.html">Unobvious</a>
+<nav class="nav" id="nav" aria-label="Main"><a data-page="index.html" href="index.html">Lab</a><a data-page="os.html" href="os.html">Unobvious OS</a><a data-page="about.html" href="about.html">About</a><a class="only-m" href="mailto:contact@unobvious.in?subject=Early%20access">Contact</a></nav>
+<div class="right"><a class="pill" href="mailto:contact@unobvious.in?subject=Early%20access">Join the alpha</a></div>
+<button class="burger" type="button" aria-expanded="false" aria-controls="nav">Menu</button></div></header><main>
+<section class="serene-hero">
+  <video class="serene-video" autoplay muted loop playsinline preload="auto" poster="assets/media/serene-poster.jpg" aria-hidden="true">
+    <source src="assets/media/serene-hero.webm" type="video/webm">
+    <source src="assets/media/serene-hero.mp4" type="video/mp4">
+  </video>
+  <div class="serene-wash" aria-hidden="true"></div>
+  <div class="serene-content">
+    <h1 class="fade-rise">A lab for making everyday life <em>simpler.</em></h1>
+    <p class="fade-rise" style="animation-delay:.2s">Quiet technology that handles the small stuff, so you can look up from the screen and get on with your life.</p>
+    <a class="pill pill-lg fade-rise" style="animation-delay:.4s" href="mailto:contact@unobvious.in?subject=Early%20access">Ask for early access</a>
+  </div>
+  <button class="serene-pause" type="button" aria-pressed="false">Pause video</button>
+</section>
+
+<section class="sec">
+  <div class="wrap point">
+    <div>
+      <h2>An assistant you talk to, not one you look at.</h2>
+      <p class="sub">Press a button, say what is on your mind, and put your phone away. It asks before it acts.</p>
+      <a class="link" href="os.html">See how it works <span>→</span></a>
+    </div>
+    <div class="panel field-wrap" data-say='[["Move my three o’clock to Thursday.","Done. I’ll ask before telling anyone."],["I’m running on empty today.","Afternoon cleared. Your rest is protected."],["Find me something good for my walk.","One essay, queued."]]'>
+      <canvas class="field" aria-hidden="true" data-ry=".4"></canvas><div class="scrim"></div><div class="grain"></div>
+      <div class="say-box"><p class="say" aria-live="polite"></p><p class="reply"></p></div>
+    </div>
+  </div>
+</section>
+<p class="quiet-line caption">More is coming to the lab.</p>
+</main>
+<script>
+(function(){
+  var v=document.querySelector('.serene-video'),b=document.querySelector('.serene-pause');if(!v||!b)return;
+  var set=function(paused){b.setAttribute('aria-pressed',paused?'true':'false');b.textContent=paused?'Play video':'Pause video'};
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();set(true)}
+  b.addEventListener('click',function(){if(v.paused){v.play();set(false)}else{v.pause();set(true)}});
+})();
+</script>
+<footer class="site-foot">
+<div class="f-ticker" aria-hidden="true"><div class="f-ticker-track"><span>Press</span><i></i><span>Speak</span><i></i><span>Sort</span><i></i><span>Ask first</span><i></i><span>Look up</span><i></i><span>Press</span><i></i><span>Speak</span><i></i><span>Sort</span><i></i><span>Ask first</span><i></i><span>Look up</span><i></i><span>Press</span><i></i><span>Speak</span><i></i><span>Sort</span><i></i><span>Ask first</span><i></i><span>Look up</span><i></i><span>Press</span><i></i><span>Speak</span><i></i><span>Sort</span><i></i><span>Ask first</span><i></i><span>Look up</span><i></i></div></div>
+<div class="f-sign"><canvas class="f-dots" aria-hidden="true"></canvas>
+<p class="f-hint"><span class="h-fine">Move across it. Press anywhere.</span><span class="h-touch">Tap anywhere.</span></p>
+<a class="f-top" href="#"><span class="f-top-ic" aria-hidden="true">↑</span>Back to top</a></div>
+<dl class="f-facts">
+<div><dt>Local time</dt><dd data-clock>Bengaluru</dd></div>
+<div><dt>Coordinates</dt><dd>12.97° N, 77.59° E</dd></div>
+<div><dt>Now</dt><dd><span class="f-pulse" aria-hidden="true"></span><span>Experiment 001, private alpha</span></dd></div>
+<div><dt>Write to us</dt><dd class="f-mail"><span class="f-addr">contact@unobvious.in</span><button type="button" class="f-copy-btn">Copy</button><span class="f-copied visually-hidden" aria-live="polite"></span></dd></div>
+</dl>
+<div class="f-stack">
+<a class="f-brand" href="index.html" aria-label="Unobvious, home"><svg class="f-mark" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10.25" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg><span>Unobvious</span></a>
+<p class="f-tag">An independent lab in Bengaluru, working on technology that gives people their attention back.</p>
+<nav aria-label="Footer"><ul class="f-links"><li><a href="index.html">Lab</a></li><li><a href="os.html">Unobvious OS</a></li><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="mailto:contact@unobvious.in?subject=Early%20access">Contact</a></li></ul></nav>
+<p class="f-copy">© 2026 Avaia Innovations (OPC) Private Limited</p>
+</div></footer>
+<div class="variants" role="navigation" aria-label="Home variations"><span>Home</span><a href="index.html">1</a><a href="home-2.html">2</a><a href="home-3.html">3</a><a href="home-4.html">4</a><a href="home-5.html" aria-current="page">5</a></div><script src="assets/triage.js"></script><script src="assets/ui.js"></script><script src="assets/footer.js"></script></body></html>

@@ -15,6 +15,7 @@ NAV=[('index.html','Lab'),('os.html','Unobvious OS'),('about.html','About')]
 def head(title,desc,cls,live=False):
     nav=''.join(f'<a data-page="{h}" href="{h}">{l}</a>' for h,l in NAV)
     LIVE=';if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.className+=" live"' if live else ''
+    right=f'<a class="pill" href="{join_href()}">Join the alpha</a>' if 'p-serene' in cls else f'<a href="{join_href()}">Contact</a>'
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{title}</title><meta name="description" content="{desc}"><meta name="theme-color" content="#F6F4EF">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,11 +23,11 @@ def head(title,desc,cls,live=False):
 <link rel="stylesheet" href="assets/ui.css"><script>document.documentElement.className+=" js"{LIVE}</script></head><body class="{cls}">
 <header class="hdr" id="hdr"><div class="bar"><a class="brand" href="index.html">Unobvious</a>
 <nav class="nav" id="nav" aria-label="Main">{nav}<a class="only-m" href="{join_href()}">Contact</a></nav>
-<div class="right"><a href="{join_href()}">Contact</a></div>
+<div class="right">{right}</div>
 <button class="burger" type="button" aria-expanded="false" aria-controls="nav">Menu</button></div></header>'''
 def variants(cur):
     if not PROTOTYPE:return ''
-    items=[('index.html','1'),('home-2.html','2'),('home-3.html','3'),('home-4.html','4')]
+    items=[('index.html','1'),('home-2.html','2'),('home-3.html','3'),('home-4.html','4'),('home-5.html','5')]
     links=''.join(f'<a href="{h}"'+(' aria-current="page"' if h==cur else '')+f'>{n}</a>' for h,n in items)
     return f'<div class="variants" role="navigation" aria-label="Home variations"><span>Home</span>{links}</div>'
 def foot(cur,show_variants,extra_js=''):
@@ -65,6 +66,7 @@ D='Unobvious is an independent lab in Bengaluru building quiet technology that g
 build('home1.html','index.html',T,D,'p-home',True)
 build('home2.html','home-2.html',T,D,'p-home',True)
 build('home3.html','home-3.html',T,D,'p-home',True)
+build('home5.html','home-5.html',T,D,'p-home p-serene',True)
 build('home4.html','home-4.html',T,D,'p-home',True,live=True,extra_js='<script src="assets/story.js"></script>')
 build('os.html','os.html','Unobvious OS · An assistant you never look at','Press a button, say what is on your mind, and put your phone away. Unobvious OS sorts it and asks before it acts.')
 build('about.html','about.html','About · Unobvious','Unobvious is an independent lab in Bengaluru, run by Aditi, building technology that gives people their attention back.')
