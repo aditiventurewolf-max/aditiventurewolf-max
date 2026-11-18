@@ -114,3 +114,17 @@ html:not(.mo) .fx-noise{height:auto}html:not(.mo) .fx-noise-stage{position:relat
 .variants{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:2px;background:var(--moon);color:var(--night);border-radius:9999px;padding:4px;font-family:var(--mono);font-size:11px}
 .variants span{padding:0 8px 0 10px;opacity:.7}.variants a{padding:6px 10px;border-radius:9999px;text-decoration:none}.variants a[aria-current=page]{background:var(--night);color:var(--moon)}
 @media(max-width:700px){.variants{bottom:auto;top:76px;left:50%;transform:translateX(-50%)}}
+
+/* background plates: generated grainy light fields (src/make_backgrounds.py) */
+.fx-plate{position:absolute;inset:-4%;z-index:-2;background-size:cover;background-position:center;transition:opacity .8s}
+.mo .fx-plate{animation:breathe 26s ease-in-out infinite alternate}
+@keyframes breathe{from{transform:scale(1) translate(0,0)}to{transform:scale(1.08) translate(-1.5%,1%)}}
+.fx-plate-dim{opacity:.55}
+.fx-light .fx-plate{inset:0;animation:none}
+.fx-halo{position:absolute;left:50%;top:50%;width:190%;aspect-ratio:1;transform:translate(-50%,-50%);background-size:cover;background-position:center;-webkit-mask-image:radial-gradient(closest-side,#000 62%,transparent 100%);mask-image:radial-gradient(closest-side,#000 62%,transparent 100%);z-index:-1;pointer-events:none}
+.mo .fx-halo{animation:halo 9s ease-in-out infinite alternate}
+@keyframes halo{from{transform:translate(-50%,-50%) scale(1)}to{transform:translate(-50%,-50%) scale(1.05) rotate(4deg)}}
+.fx-lens{isolation:isolate}
+.fx-hero::before{z-index:-1}
+@media(max-width:860px){.fx-halo{width:150%}}
+@media(prefers-reduced-motion:reduce){.fx-plate,.fx-halo{animation:none}}

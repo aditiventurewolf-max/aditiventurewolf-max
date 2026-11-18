@@ -81,4 +81,5 @@ def build_standalone(src,out):
     (OUT/out).write_text(body)
 build_standalone('home6.html','home-6.html')
 build_standalone('home7.html','home-7.html')
+(OUT/'brand.html').write_text(rd('brand.html'))
 if WARN:print('TODO before launch:',', '.join(sorted(WARN)))

@@ -6,7 +6,10 @@ var clamp=function(v,a,b){return Math.min(b,Math.max(a,v))},ease=function(t){ret
 /* ---------- palette switch (prototype) ---------- */
 function rgb(name){return getComputedStyle(root).getPropertyValue(name).trim().split(',').map(Number)}
 var pals=qa('.fx-pal button');
-function setPal(p){if(p==='cinema')root.dataset.pal='cinema';else delete root.dataset.pal;pals.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.pal===p?'true':'false')});try{localStorage.setItem('fxpal',p)}catch(e){}measureTiles();auraColours()}
+function plates(p){qa('.fx-plate').forEach(function(el){var n=p==='cinema'&&el.dataset.plate!=='paper-glow'?'cinema-veil':el.dataset.plate;el.style.backgroundImage='url(assets/media/bg/'+n+'.webp)'});
+  qa('.fx-halo').forEach(function(el){el.style.backgroundImage='url(assets/media/bg/'+(p==='cinema'?'halo-cinema':'halo')+'.webp)'})}
+plates('amber');
+function setPal(p){plates(p);if(p==='cinema')root.dataset.pal='cinema';else delete root.dataset.pal;pals.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.pal===p?'true':'false')});try{localStorage.setItem('fxpal',p)}catch(e){}measureTiles();auraColours()}
 pals.forEach(function(b){b.addEventListener('click',function(){setPal(b.dataset.pal)})});
 
 /* ---------- live contrast on each tile ---------- */

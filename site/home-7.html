@@ -2,6 +2,7 @@
 <title>Unobvious · Everything else can blur</title>
 <meta name="description" content="Unobvious is an independent lab in Bengaluru. Its first experiment, Unobvious OS, is an assistant you talk to, not look at.">
 <meta name="theme-color" content="#13181B">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/focus.css">
@@ -9,7 +10,7 @@
 </head><body class="fx">
 
 <header class="fx-nav">
-  <a class="fx-brand" href="index.html"><span class="fx-mark" aria-hidden="true"></span>Unobvious</a>
+  <a class="fx-brand" href="index.html"><svg class="fx-logo" viewBox="0 0 64 64" width="22" height="22" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="square"><path d="M8 22V8h14M42 8h14v14M56 42v14H42M22 56H8V42"/></g><circle cx="32" cy="32" r="9" fill="var(--hot)"/></svg>Unobvious</a>
   <nav aria-label="Main"><ul><li><a href="index.html">Lab</a></li><li><a href="os.html">Unobvious OS</a></li><li><a href="about.html">About</a></li></ul></nav>
   <div class="fx-pal" role="group" aria-label="Colour palette"><button type="button" data-pal="amber" aria-pressed="true">Amber</button><button type="button" data-pal="cinema" aria-pressed="false">Cinema</button></div>
   <a class="fx-pill fx-pill-hot fx-pill-sm" href="mailto:contact@unobvious.in?subject=Early%20access">Early access</a>
@@ -18,7 +19,7 @@
 <main>
 <!-- 01 HERO: the focus frame -->
 <section class="fx-hero fx-dark" aria-labelledby="fx-h1">
-  <canvas class="fx-aura" aria-hidden="true"></canvas><div class="fx-grain" aria-hidden="true"></div>
+  <div class="fx-plate" data-plate="amber-horizon" style="background-image:url(assets/media/bg/amber-horizon.webp)" aria-hidden="true"></div><div class="fx-grain" aria-hidden="true"></div>
   <p class="fx-meta fx-tl" aria-hidden="true">focus</p><p class="fx-meta fx-tr" aria-hidden="true">look up</p>
   <div class="fx-hero-copy">
     <p class="fx-meta">Unobvious · a lab in Bengaluru</p>
@@ -27,6 +28,7 @@
     <div class="fx-ctas"><a class="fx-pill fx-pill-hot" href="mailto:contact@unobvious.in?subject=Early%20access">Ask for early access</a><a class="fx-pill fx-pill-line" href="#push">See it work</a></div>
   </div>
   <div class="fx-lens" aria-hidden="true">
+    <div class="fx-halo" style="background-image:url(assets/media/bg/halo.webp)"></div>
     <img class="fx-dev fx-dev-blur" src="assets/media/device-hero.webp" width="1310" height="1508" alt="">
     <img class="fx-dev fx-dev-sharp" src="assets/media/device-hero.webp" width="1310" height="1508" alt="">
     <div class="fx-frame"><i></i><i></i><i></i><i></i><b class="fx-cross"></b><span class="fx-meta fx-frame-label">Unobvious OS</span></div>
@@ -37,7 +39,7 @@
 <!-- 02 PUSH IN: the camera moves into the button -->
 <section class="fx-push fx-dark" id="push" aria-label="Moving in to the press button">
   <div class="fx-push-stage">
-    <canvas class="fx-aura" aria-hidden="true"></canvas><div class="fx-grain" aria-hidden="true"></div>
+    <div class="fx-plate" data-plate="amber-wave" style="background-image:url(assets/media/bg/amber-wave.webp)" aria-hidden="true"></div><div class="fx-grain" aria-hidden="true"></div>
     <img class="fx-push-dev" src="assets/media/device-hero.webp" width="1310" height="1508" alt="The Unobvious wrist companion: a ceramic body with one graphite press button">
     <p class="fx-push-cap"><span class="c1">Most days start with a screen.</span><span class="c2">This one starts with a press.</span></p>
     <p class="fx-meta fx-push-read" aria-hidden="true">Distance <span class="fx-dist">60 cm</span></p>
@@ -47,7 +49,7 @@
 <!-- 03 NOISE → FOCUS -->
 <section class="fx-noise fx-dark" aria-labelledby="fx-noise-h">
   <div class="fx-noise-stage">
-    <div class="fx-grain" aria-hidden="true"></div>
+    <div class="fx-plate fx-plate-dim" data-plate="amber-window" style="background-image:url(assets/media/bg/amber-window.webp)" aria-hidden="true"></div><div class="fx-grain" aria-hidden="true"></div>
     <div class="fx-field" aria-hidden="true"></div>
     <div class="fx-noise-copy">
       <p class="fx-meta">What it does</p>
@@ -63,7 +65,7 @@
 
 <!-- 04 LIGHT: it asks first -->
 <section class="fx-light fx-sec" aria-labelledby="fx-ask">
-  <div class="fx-glow" aria-hidden="true"></div><div class="fx-grain fx-grain-light" aria-hidden="true"></div>
+  <div class="fx-plate" data-plate="paper-glow" style="background-image:url(assets/media/bg/paper-glow.webp)" data-cinema="paper-glow" aria-hidden="true"></div><div class="fx-grain fx-grain-light" aria-hidden="true"></div>
   <div class="fx-wrap fx-two">
     <div class="fx-rev"><p class="fx-meta">Trust</p><h2 id="fx-ask" class="fx-h2">It asks before it acts.</h2><p class="fx-lede">Sorting, saving and protecting your time happen quietly. Anything that reaches another person waits for one tap from you.</p></div>
     <div class="fx-lists fx-rev">
@@ -75,6 +77,7 @@
 
 <!-- 05 THE DAY as poster tiles -->
 <section class="fx-day fx-sec fx-dark" aria-labelledby="fx-day-h">
+  <div class="fx-plate fx-plate-dim" data-plate="amber-eclipse" style="background-image:url(assets/media/bg/amber-eclipse.webp)" aria-hidden="true"></div><div class="fx-grain" aria-hidden="true"></div>
   <div class="fx-wrap">
     <p class="fx-meta">Through the day</p><h2 id="fx-day-h" class="fx-h2">Same button. Different light.</h2>
     <div class="fx-tiles">
@@ -89,7 +92,7 @@
 
 <!-- 06 CLOSE -->
 <section class="fx-close fx-dark" aria-labelledby="fx-close-h">
-  <canvas class="fx-aura" aria-hidden="true"></canvas><div class="fx-grain" aria-hidden="true"></div>
+  <div class="fx-plate" data-plate="amber-horizon" style="background-image:url(assets/media/bg/amber-horizon.webp)" aria-hidden="true"></div><div class="fx-grain" aria-hidden="true"></div>
   <div class="fx-wrap fx-close-row">
     <div><h2 id="fx-close-h" class="fx-h2">Want an early look?</h2><p class="fx-meta">Private alpha · small on purpose · contact@unobvious.in</p></div>
     <div class="fx-ctas"><a class="fx-pill fx-pill-hot" href="mailto:contact@unobvious.in?subject=Early%20access">Ask for early access</a><a class="fx-pill fx-pill-line" href="about.html">About the lab</a></div>
