@@ -12,6 +12,7 @@ if(document.body.hasAttribute('data-proto')){
  $$('button',w).forEach(b=>b.onclick=()=>set(b.dataset.p));set(root.dataset.pal==='b'?'b':'a');
 }
 
+let ws=[];
 /* header */
 const hdr=$('.hdr'),nav=$('.nav'),burger=$('.burger');
 const onScroll=()=>{hdr.classList.toggle('scrolled',scrollY>8);words()};addEventListener('scroll',onScroll,{passive:true});
@@ -34,7 +35,7 @@ function chip(box,o,delay,id,get){setTimeout(()=>{if(id!==get())return;const c=d
 
 /* mini demo on home (loops) */
 const mini=$('.mini');
-if(mini){const note=mini.dataset.note,outs=JSON.parse(mini.dataset.outs),tx=$('.tx',mini),box=$('.rchips',mini);let run=0;const get=()=>run;
+if(mini){const note=mini.dataset.note,outs=safe(()=>JSON.parse(mini.dataset.outs))||[],tx=$('.tx',mini),box=$('.rchips',mini);let run=0;const get=()=>run;
  const cycle=()=>{const id=++run;box.innerHTML='';typeInto(tx,note,id,get,()=>{outs.forEach((o,k)=>chip(box,o,300+k*420,id,get));if(!reduce)setTimeout(()=>{if(id===run)cycle()},9000)})};
  const o=new IntersectionObserver(es=>{if(es[0].isIntersecting){o.disconnect();cycle()}},{threshold:.4});o.observe(mini)}
 
@@ -52,8 +53,8 @@ if(dev){
  $$('.badge',dev).forEach(b=>{const i=b.dataset.i;['mouseenter','focus','click'].forEach(ev=>b.addEventListener(ev,()=>showPart(i)));['mouseleave','blur'].forEach(ev=>b.addEventListener(ev,()=>showPart(0)));
   b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showPart(i)}})});
  const trig=$('#trig'),tx=$('#tx'),chips=$('#rchips'),led=$('#led');
- const NOTE="Brain fog is heavy today. Push the vendor call to Thursday, order the ESP32-S3 board for the prototype, and queue something philosophical for my evening walk.";
- const OUT=[['state','THOUGHT','Afternoon turned into recovery'],['firm','DECISION','Vendor call moved to Thursday'],['firm','DECISION','Board order waiting for your tap'],['','IDEA','Mumford essay queued for your walk'],['state','SCREEN TIME','0.0 seconds']];
+ const NOTE="I'm running on empty today. Move my three o'clock to Thursday, remind me to book the dentist, and find me something good to listen to on my walk.";
+ const OUT=[['state','THOUGHT','Afternoon turned into recovery'],['firm','DECISION','Three o\'clock moved, waiting for your OK'],['firm','DECISION','Dentist added to tomorrow'],['','IDEA','Something to listen to, queued'],['state','SCREEN TIME','0.0 seconds']];
  const play=()=>{const id=++run;chips.innerHTML='';trig.classList.add('listening');trig.setAttribute('aria-pressed','true');if(led)led.style.opacity=1;
   typeInto(tx,NOTE,id,get,()=>{trig.classList.remove('listening');trig.setAttribute('aria-pressed','false');OUT.forEach((o,k)=>chip(chips,o,300+k*380,id,get))})};
  const toggle=()=>{if(trig.classList.contains('listening')){run++;trig.classList.remove('listening');trig.setAttribute('aria-pressed','false');tx.textContent='Stopped. Press again to speak.'}else play()};
@@ -63,7 +64,7 @@ if(dev){
 }
 
 /* manifesto word reveal (about) */
-const mt=$('.mtext');let ws=[];
+const mt=$('.mtext');
 if(mt){$$('p',mt).forEach(p=>{const sig=p.hasAttribute('data-sig');p.innerHTML=p.textContent.trim().split(/\s+/).map(w=>`<span class="w${sig?' sig':''}">${w}</span>`).join(' ')});ws=$$('.w',mt)}
 function words(){if(!ws.length)return;const vh=innerHeight;ws.forEach(w=>{w.classList.toggle('on',reduce||w.getBoundingClientRect().top<vh*.7)})}
 onScroll();

@@ -8,17 +8,17 @@
   <rect x="164" y="76" width="232" height="108" rx="9"/>
   <rect class="part" data-i="1" x="180" y="92" width="100" height="76" fill="#EFECE4"/>
   <rect x="190" y="112" width="44" height="34" stroke-width="1"/><path d="M196 120h32M196 127h32M196 134h32" stroke-width=".6"/>
-  <text x="188" y="104" fill="#18181B" stroke="none" font-family="JetBrains Mono,monospace" font-size="9">ESP32-S3</text>
+  <text x="188" y="104" fill="#18181B" stroke="none" font-family="JetBrains Mono,monospace" font-size="9">BLE</text>
   <circle cx="258" cy="130" r="7"/>
   <g class="part" data-i="2" fill="#18181B" stroke="none"><circle cx="302" cy="100" r="2.2"/><circle cx="311" cy="100" r="2.2"/><circle cx="320" cy="100" r="2.2"/><circle cx="306" cy="109" r="2.2"/><circle cx="315" cy="109" r="2.2"/></g>
   <g id="trig" role="button" tabindex="0" aria-label="Press to speak" aria-pressed="false"><circle class="ring" cx="346" cy="140" r="14"/><circle class="ring r2" cx="346" cy="140" r="14"/><circle class="ring r3" cx="346" cy="140" r="14"/><circle class="part" data-i="3" cx="346" cy="140" r="24" stroke-width="1.8" fill="#F6F4EF"/><circle class="core" cx="346" cy="140" r="14" stroke="none"/></g>
   <circle id="led" class="part" data-i="4" cx="378" cy="94" r="4" fill="#E85D04" stroke="none" style="opacity:.35;transition:.3s"/>
   <g class="leaders" stroke-width=".8"><path d="M230 92V30M311 100V30M346 116L400 30M378 90L470 30" /></g>
-  <g class="badge" data-i="1" tabindex="0" role="button" aria-label="Part 1: ESP32-S3"><circle cx="230" cy="28" r="12"/><text x="230" y="32">1</text></g>
+  <g class="badge" data-i="1" tabindex="0" role="button" aria-label="Part 1: brain"><circle cx="230" cy="28" r="12"/><text x="230" y="32">1</text></g>
   <g class="badge" data-i="2" tabindex="0" role="button" aria-label="Part 2: microphones"><circle cx="311" cy="28" r="12"/><text x="311" y="32">2</text></g>
   <g class="badge" data-i="3" tabindex="0" role="button" aria-label="Part 3: trigger"><circle cx="400" cy="28" r="12"/><text x="400" y="32">3</text></g>
   <g class="badge" data-i="4" tabindex="0" role="button" aria-label="Part 4: status light"><circle cx="470" cy="28" r="12"/><text x="470" y="32">4</text></g>
-  <g stroke="#52525B" stroke-width=".8"><path d="M150 222H410M150 216v12M410 216v12"/></g><text x="228" y="240" fill="#52525B" stroke="none" font-family="JetBrains Mono,monospace" font-size="9">42 mm · target</text>
+  
  </svg>
  <div class="readout"><div class="mono">Voice note</div><div class="tx" id="tx" aria-live="polite"></div><div class="rchips" id="rchips"></div>
   <div class="hint partinfo" id="partinfo"></div></div>

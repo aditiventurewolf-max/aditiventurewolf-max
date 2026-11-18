@@ -1,22 +1,22 @@
 // Simulated preview: canned examples, no network calls, no API keys.
 (function(){
   const EX=[
-   {label:'Brain fog + vendor',text:"Brain fog is heavy today. Push the vendor call to Thursday, order the ESP32-S3 board for the prototype, and queue something philosophical for my evening walk.",
+   {label:'A foggy morning',text:"I'm running on empty today. Move my three o'clock to Thursday, remind me to book the dentist, and find me something good to listen to on my walk.",
     out:[
-     {k:'THOUGHT',c:'state',t:'Brain fog is heavy today.',r:'→ LIFE_PLANNER · afternoon deep-work block converted to recovery'},
-     {k:'DECISION',c:'firm',t:'Push the vendor call to Thursday.',r:'→ COMMS · Thursday slot negotiated automatically'},
-     {k:'DECISION',c:'firm',t:'Order the ESP32-S3 board.',r:'→ PROCUREMENT_OPS · DevKit matched across verified suppliers · 1-tap approval queued'},
-     {k:'IDEA',c:'',t:'Something philosophical for the evening walk.',r:'→ INTEL_CURATOR · long-form essay on Lewis Mumford and tool-making queued for audio'},
-     {k:'SCREEN_TIME',c:'state',t:'Required for this note: 0.0 seconds.',r:''}]},
-   {label:'Evening wind-down',text:"Done for today. The pitch deck is mostly there, park the pricing slide for tomorrow. Remind me to call Amma on Sunday.",
+     {k:'THOUGHT',c:'state',t:'Running on empty.',r:'→ The afternoon becomes recovery time'},
+     {k:'DECISION',c:'firm',t:'Move the three o\u2019clock to Thursday.',r:'→ A polite note is drafted · needs your OK'},
+     {k:'DECISION',c:'firm',t:'Book the dentist.',r:'→ Added to tomorrow morning, nothing sent'},
+     {k:'IDEA',c:'',t:'Something good to listen to.',r:'→ An essay is queued for your walk'},
+     {k:'SCREEN TIME',c:'state',t:'Needed for this note: 0.0 seconds.',r:''}]},
+   {label:'End of the day',text:"That's enough for today. The slides are nearly done, leave the pricing slide for tomorrow. Remind me to call Mum on Sunday.",
     out:[
-     {k:'THOUGHT',c:'state',t:'End of the work day.',r:'→ LIFE_PLANNER · silences non-urgent notifications'},
-     {k:'IDEA',c:'',t:'Pricing slide: parked for tomorrow.',r:'→ Idea incubator · not added to your to-do list'},
-     {k:'DECISION',c:'firm',t:'Call Amma on Sunday.',r:'→ LIFE_PLANNER · personal calendar block, no approval needed'}]},
-   {label:'Reading curiosity',text:"I keep thinking about why slow institutions outlast fast startups. Is there something good on that?",
+     {k:'THOUGHT',c:'state',t:'End of the work day.',r:'→ Non-urgent notifications go quiet'},
+     {k:'IDEA',c:'',t:'Pricing slide: for tomorrow.',r:'→ Saved, not added to your to-do list'},
+     {k:'DECISION',c:'firm',t:'Call Mum on Sunday.',r:'→ Added to your calendar'}]},
+   {label:'A curious evening',text:"I keep wondering why old institutions outlast new companies. Is there something good to read on that?",
     out:[
-     {k:'THOUGHT',c:'state',t:'A recurring curiosity.',r:'→ Journal · interest map updated'},
-     {k:'DECISION',c:'firm',t:'One essay for tomorrow\u2019s morning brief.',r:'→ INTEL_CURATOR · 1 high-signal piece, not a feed'}]}
+     {k:'THOUGHT',c:'state',t:'A recurring curiosity.',r:'→ Remembered, so your reading gets better'},
+     {k:'DECISION',c:'firm',t:'One essay for tomorrow\u2019s morning brief.',r:'→ One good piece, not a feed'}]}
   ];
   const $=s=>document.querySelector(s);
   const chips=$('#chips'),tx=$('#transcript'),out=$('#tri-out'),ap=$('#approve');
@@ -42,7 +42,7 @@
       d.innerHTML=`<span class="tag ${o.c}">${o.k}</span><p>${o.t}</p>${o.r?`<div class="route">${o.r}</div>`:''}`;
       out.appendChild(d);requestAnimationFrame(()=>d.classList.add('in'));
       if(k===e.out.length-1)setTimeout(()=>{ if(id!==run)return;
-        const ext=e.out.filter(x=>/1-tap/.test(x.r)).length;
+        const ext=e.out.filter(x=>/your OK/.test(x.r)).length;
         ap.querySelector('p.q').textContent=ext?`${ext} external action${ext>1?'s':''} waiting for you. Nothing is sent until you say so.`:'Nothing needs approval. Internal updates done silently.';
         ap.querySelector('button').style.display=ext?'':'none';
         ap.classList.add('in')},400)},reduce?0:k*450));
