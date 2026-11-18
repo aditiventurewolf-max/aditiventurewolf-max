@@ -30,10 +30,15 @@ def variants(cur):
     links=''.join(f'<a href="{h}"'+(' aria-current="page"' if h==cur else '')+f'>{n}</a>' for h,n in items)
     return f'<div class="variants" role="navigation" aria-label="Home variations"><span>Home</span>{links}</div>'
 def foot(cur,show_variants,extra_js=''):
-    links=''.join(f'<a href="{h}">{l}</a>' for h,l in NAV)
-    return f'''<footer><div class="wrap"><div class="row2"><div><a class="brand" href="index.html">Unobvious</a>
-<p>An independent lab in Bengaluru, working on technology that gives people their attention back.</p><p style="margin-top:8px">© Avaia Innovations (OPC) Private Limited</p></div>
-<div class="links">{links}<a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></div></footer>
+    items=NAV+[('privacy.html','Privacy'),('terms.html','Terms'),(join_href(),'Contact')]
+    links=''.join(f'<li><a href="{h}"'+(' aria-current="page"' if h==cur else '')+f'>{l}</a></li>' for h,l in items)
+    mark='<svg class="f-mark" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10.25" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>'
+    return f'''<footer class="site-foot"><div class="f-stack">
+<a class="f-brand" href="index.html" aria-label="Unobvious, home">{mark}<span>Unobvious</span></a>
+<p class="f-tag">An independent lab in Bengaluru, working on technology that gives people their attention back.</p>
+<nav aria-label="Footer"><ul class="f-links">{links}</ul></nav>
+<p class="f-copy">© 2026 Avaia Innovations (OPC) Private Limited</p>
+</div></footer>
 {variants(cur) if show_variants else ''}<script src="assets/triage.js"></script><script src="assets/ui.js"></script>{extra_js}</body></html>'''
 def build(src,out,title,desc,cls='',show_variants=False,live=False,extra_js=''):
     body=rd(src)
