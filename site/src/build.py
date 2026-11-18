@@ -33,13 +33,26 @@ def foot(cur,show_variants,extra_js=''):
     items=NAV+[('privacy.html','Privacy'),('terms.html','Terms'),(join_href(),'Contact')]
     links=''.join(f'<li><a href="{h}"'+(' aria-current="page"' if h==cur else '')+f'>{l}</a></li>' for h,l in items)
     mark='<svg class="f-mark" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10.25" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>'
-    return f'''<footer class="site-foot"><div class="f-stack">
+    loop=['Press','Speak','Sort','Ask first','Look up']
+    run=''.join(f'<span>{w}</span><i></i>' for w in loop)
+    return f'''<footer class="site-foot">
+<div class="f-ticker" aria-hidden="true"><div class="f-ticker-track">{run*4}</div></div>
+<div class="f-sign"><canvas class="f-dots" aria-hidden="true"></canvas>
+<p class="f-hint"><span class="h-fine">Move across it. Press anywhere.</span><span class="h-touch">Tap anywhere.</span></p>
+<a class="f-top" href="#"><span class="f-top-ic" aria-hidden="true">↑</span>Back to top</a></div>
+<dl class="f-facts">
+<div><dt>Local time</dt><dd data-clock>Bengaluru</dd></div>
+<div><dt>Coordinates</dt><dd>12.97° N, 77.59° E</dd></div>
+<div><dt>Now</dt><dd><span class="f-pulse" aria-hidden="true"></span><span>Experiment 001, private alpha</span></dd></div>
+<div><dt>Write to us</dt><dd class="f-mail"><span class="f-addr">{email()}</span><button type="button" class="f-copy-btn">Copy</button><span class="f-copied visually-hidden" aria-live="polite"></span></dd></div>
+</dl>
+<div class="f-stack">
 <a class="f-brand" href="index.html" aria-label="Unobvious, home">{mark}<span>Unobvious</span></a>
 <p class="f-tag">An independent lab in Bengaluru, working on technology that gives people their attention back.</p>
 <nav aria-label="Footer"><ul class="f-links">{links}</ul></nav>
 <p class="f-copy">© 2026 Avaia Innovations (OPC) Private Limited</p>
 </div></footer>
-{variants(cur) if show_variants else ''}<script src="assets/triage.js"></script><script src="assets/ui.js"></script>{extra_js}</body></html>'''
+{variants(cur) if show_variants else ''}<script src="assets/triage.js"></script><script src="assets/ui.js"></script><script src="assets/footer.js"></script>{extra_js}</body></html>'''
 def build(src,out,title,desc,cls='',show_variants=False,live=False,extra_js=''):
     body=rd(src)
     for k in('triage','cta'):
