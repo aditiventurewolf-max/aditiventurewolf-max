@@ -27,7 +27,7 @@ def head(title,desc,cls,live=False):
 <button class="burger" type="button" aria-expanded="false" aria-controls="nav">Menu</button></div></header>'''
 def variants(cur):
     if not PROTOTYPE:return ''
-    items=[('index.html','1'),('home-2.html','2'),('home-3.html','3'),('home-4.html','4'),('home-5.html','5')]
+    items=[('index.html','1'),('home-2.html','2'),('home-3.html','3'),('home-4.html','4'),('home-5.html','5'),('home-6.html','6')]
     links=''.join(f'<a href="{h}"'+(' aria-current="page"' if h==cur else '')+f'>{n}</a>' for h,n in items)
     return f'<div class="variants" role="navigation" aria-label="Home variations"><span>Home</span>{links}</div>'
 def foot(cur,show_variants,extra_js=''):
@@ -72,4 +72,12 @@ build('os.html','os.html','Unobvious OS · An assistant you never look at','Pres
 build('about.html','about.html','About · Unobvious','Unobvious is an independent lab in Bengaluru, run by Aditi, building technology that gives people their attention back.')
 build('privacy.html','privacy.html','Privacy Policy · Unobvious','How Unobvious collects, uses and protects personal data.')
 build('terms.html','terms.html','Terms of Service · Unobvious','Terms for using Unobvious services.')
+
+# Home 6 is a standalone page with its own type, nav and close (poster style)
+def build_standalone(src,out):
+    body=rd(src).replace('{{JOIN}}',join_href())
+    body=re.sub(r'\{\{EMAIL(?::\w+)?\}\}',lambda m:email(),body)
+    body=body.replace('{{VARIANTS}}',variants(out))
+    (OUT/out).write_text(body)
+build_standalone('home6.html','home-6.html')
 if WARN:print('TODO before launch:',', '.join(sorted(WARN)))
