@@ -27,7 +27,7 @@ def head(title,desc,cls,live=False):
 <button class="burger" type="button" aria-expanded="false" aria-controls="nav">Menu</button></div></header>'''
 def variants(cur):
     if not PROTOTYPE:return ''
-    items=[('index.html','1'),('home-2.html','2'),('home-3.html','3'),('home-4.html','4'),('home-5.html','5'),('home-6.html','6')]
+    items=[('index.html','1'),('home-2.html','2'),('home-3.html','3'),('home-4.html','4'),('home-5.html','5'),('home-6.html','6'),('home-7.html','7')]
     links=''.join(f'<a href="{h}"'+(' aria-current="page"' if h==cur else '')+f'>{n}</a>' for h,n in items)
     return f'<div class="variants" role="navigation" aria-label="Home variations"><span>Home</span>{links}</div>'
 def foot(cur,show_variants,extra_js=''):
@@ -80,4 +80,5 @@ def build_standalone(src,out):
     body=body.replace('{{VARIANTS}}',variants(out))
     (OUT/out).write_text(body)
 build_standalone('home6.html','home-6.html')
+build_standalone('home7.html','home-7.html')
 if WARN:print('TODO before launch:',', '.join(sorted(WARN)))
