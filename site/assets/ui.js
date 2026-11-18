@@ -86,5 +86,21 @@ if(mf){qa('p',mf).forEach(function(p){p.innerHTML=p.textContent.trim().split(/\s
 /* live local time for the index page */
 var tm=q('[data-time]');
 if(tm){try{tm.textContent=new Intl.DateTimeFormat('en-IN',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Asia/Kolkata'}).format(new Date())+' IST'}catch(e){tm.textContent=''}}
+/* FAQ accordion: one open at a time, arrow keys move between questions */
+var faq=q('.faq-list');
+if(faq){
+  var items=qa('.faq-item',faq),btns=items.map(function(it){return q('button',it)});
+  function setOpen(item,open){item.classList.toggle('is-open',open);q('button',item).setAttribute('aria-expanded',open?'true':'false')}
+  function openOnly(item){items.forEach(function(it){setOpen(it,it===item)})}
+  btns.forEach(function(b,i){
+    b.addEventListener('click',function(){var it=items[i];if(it.classList.contains('is-open')){setOpen(it,false)}else{openOnly(it)}});
+    b.addEventListener('keydown',function(e){
+      var k=e.key,n=-1;
+      if(k==='ArrowDown')n=(i+1)%btns.length;else if(k==='ArrowUp')n=(i-1+btns.length)%btns.length;else if(k==='Home')n=0;else if(k==='End')n=btns.length-1;
+      if(n>-1){e.preventDefault();btns[n].focus()}
+    });
+  });
+  openOnly(items[0]);
+}
 headerState();
 })();

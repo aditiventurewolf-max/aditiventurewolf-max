@@ -18,7 +18,7 @@ def head(title,desc,cls):
 <title>{title}</title><meta name="description" content="{desc}"><meta name="theme-color" content="#F6F4EF">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/ui.css"></head><body class="{cls}">
+<link rel="stylesheet" href="assets/ui.css"><script>document.documentElement.className+=" js"</script></head><body class="{cls}">
 <header class="hdr" id="hdr"><div class="bar"><a class="brand" href="index.html">Unobvious</a>
 <nav class="nav" id="nav" aria-label="Main">{nav}<a class="only-m" href="{join_href()}">Contact</a></nav>
 <div class="right"><a href="{join_href()}">Contact</a></div>
