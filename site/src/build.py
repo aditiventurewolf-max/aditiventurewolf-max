@@ -1,48 +1,45 @@
-import pathlib
+import pathlib,re
 S=pathlib.Path(__file__).parent;OUT=S.parent
-# Set DOMAIN (e.g. "example.com") before launch. Left blank on purpose: never publish a made-up address.
-# Anything that needs it renders as a highlighted TODO until this is filled in.
+# Set DOMAIN before launch. One alias serves general contact, privacy and grievance mail: create it.
 DOMAIN="unobvious.in"
-# One alias serves general contact, privacy and grievance mail. Create it before launch.
 CONTACT_LOCAL="contact"
+PROTOTYPE=True  # shows the palette switcher; set False for launch
+PAGES=[('index.html','Lab'),('os.html','Unobvious OS'),('about.html','About')]
 WARN=set()
+rd=lambda n:(S/n).read_text()
 def todo(t):
     WARN.add(t);return f'<mark class="todo">{t}</mark>'
-def email(local):
+def email(local=None):
     return f"{CONTACT_LOCAL}@{DOMAIN}" if DOMAIN else todo(f"{CONTACT_LOCAL}@your-domain")
-rd=lambda n:(S/n).read_text()
-PAGES=[('index.html','Lab'),('products.html','Products'),('architecture.html','Architecture'),('about.html','About')]
+def join_href():
+    return f"mailto:{CONTACT_LOCAL}@{DOMAIN}?subject=Private%20alpha" if DOMAIN else "about.html"
 def head(title,desc):
+    nav=''.join(f'<a data-page="{h}" href="{h}">{l}</a>' for h,l in PAGES)
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{title}</title><meta name="description" content="{desc}"><meta name="theme-color" content="#F6F4EF">
+<title>{title}</title><meta name="description" content="{desc}"><meta name="theme-color" content="#F3F5F2">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css"></head><body>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css"></head><body{' data-proto' if PROTOTYPE else ''}>
 <header class="hdr"><div class="wrap"><a class="brand" href="index.html"><i></i>Unobvious</a>
 <button class="burger" aria-expanded="false" aria-controls="nav">Menu</button>
-<nav class="nav" id="nav">{''.join(f'<a data-page="{h}" href="{h}">{l}</a>' for h,l in PAGES)}<a class="pill" href="{contact_href()}">Get in touch</a></nav></div><div class="progress"></div></header>'''
-def contact_href():
-    return f"mailto:{CONTACT_LOCAL}@{DOMAIN}" if DOMAIN else "about.html#contact"
+<nav class="nav" id="nav">{nav}<a class="pill" href="{join_href()}">Join the alpha</a></nav></div></header>'''
 def foot():
-    return f'''<footer><div class="wrap"><div class="row"><div><a class="brand" href="index.html" style="color:var(--paper)"><i></i>Unobvious</a>
-<p>An independent applied AI, hardware and systems design studio, working on systems, products and institutions that work for the people using them.</p></div>
-<div>{''.join(f'<a href="{h}">{l}</a>' for h,l in PAGES)}</div></div>
-<div class="mega" aria-hidden="true">Unobvious</div>
-<div class="legal mono"><span>© Avaia Innovations (OPC) Private Limited · Bengaluru, Karnataka, India</span><span><a href="privacy.html" style="display:inline;margin:0 14px 0 0">Privacy</a><a href="terms.html" style="display:inline;margin:0">Terms</a></span></div></div></footer>
+    links=''.join(f'<a href="{h}">{l}</a>' for h,l in PAGES)
+    return f'''<footer><div class="wrap"><div class="row"><div><a class="brand" href="index.html"><i></i>Unobvious</a>
+<p>An independent lab in Bengaluru, working on technology that gives people their attention back.<br>© Avaia Innovations (OPC) Private Limited</p></div>
+<div class="links">{links}<a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></div></footer>
 <script src="assets/triage.js"></script><script src="assets/app.js"></script></body></html>'''
 def build(src,title,desc):
     body=rd(src)
-    for k in('manifesto','triage','cta'):
+    for k in('device','triage','cta'):
         body=body.replace('{{'+k+'}}',rd(k+'.part'))
-    body=body.replace('{{CONTACT}}',contact_href()).replace('{{SITE}}',f"https://www.{DOMAIN}" if DOMAIN else todo("your-domain"))
-    import re
-    body=re.sub(r'\{\{EMAIL:(\w+)\}\}',lambda m:email(m.group(1)),body)
+    body=body.replace('{{JOIN}}',join_href()).replace('{{SITE}}',f"https://www.{DOMAIN}" if DOMAIN else todo("your-domain"))
+    body=re.sub(r'\{\{EMAIL(?::\w+)?\}\}',lambda m:email(),body)
+    body=re.sub(r'\{\{todo:([^}]+)\}\}',lambda m:todo(m.group(1)),body)
     (OUT/src).write_text(head(title,desc)+body+foot())
-build('index.html','Unobvious · Systems that make life simpler, not busier','An independent studio in Bengaluru building products, systems and institutions around the person using them. Starting with Unobvious OS.')
-build('products.html','Products · Unobvious','Everything on the Unobvious bench, with what it is, why it exists, and where it stands.')
-build('architecture.html','Architecture · Unobvious OS','How Unobvious OS listens, triages, routes to scoped agents, and asks before it acts.')
+build('index.html','Unobvious · A lab for making everyday life simpler','Unobvious is an independent lab in Bengaluru building quiet technology that gives people their attention back. Start with Unobvious OS.')
+build('os.html','Unobvious OS · An assistant you never look at','Unobvious OS: press a button, say what is on your mind, and put your phone away. It sorts, handles what it can, and asks before it acts.')
+build('about.html','About · Unobvious','Unobvious is an independent lab in Bengaluru, run by Aditi, building technology that gives people their attention back.')
 build('privacy.html','Privacy Policy · Unobvious','How Unobvious collects, uses and protects personal data.')
 build('terms.html','Terms of Service · Unobvious','Terms for using Unobvious services.')
-build('about.html','About · Unobvious','Unobvious is a studio of Avaia Innovations (OPC) Private Limited in Bengaluru.')
-
 if WARN:print('TODO before launch:',', '.join(sorted(WARN)))

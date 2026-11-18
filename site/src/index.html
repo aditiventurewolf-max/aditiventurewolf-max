@@ -1,126 +1,44 @@
 <main>
 <section class="hero"><div class="wrap grid">
-<div>
- <div class="mono"><span class="dot live"></span>Lab note 001 · Bengaluru · Applied ambient intelligence</div>
- <h1 style="margin-top:22px">Systems that make life <span class="rot" data-words='["simpler","calmer","quieter","fuller"]'>simpler</span>, <em>not busier.</em></h1>
- <p class="lede">Unobvious designs and builds products, systems and institutions around the person using them, with AI doing the quiet work in the background instead of demanding your attention.</p>
- <div class="cta"><a class="btn primary" href="#lab">Explore the lab <span class="ar">↓</span></a><a class="btn" href="#why">Why we exist</a></div>
-</div>
-<div class="bench reveal" id="device">
- <div class="bench-h mono"><span><span class="dot live"></span>Live bench · UO-W1 Gen-1</span><span>Illustrative</span></div>
- <svg viewBox="0 0 560 250" role="group" aria-label="Interactive drawing of the Gen-1 wrist companion" fill="none" stroke="#18181B" stroke-width="1.3">
-  <path d="M20 112Q20 88 46 88L130 94H430L514 88Q540 88 540 112V148Q540 172 514 172L430 166H130L46 172Q20 172 20 148Z" fill="#F6F4EF"/>
-  <g stroke-dasharray="3 3" stroke="#52525B"><path d="M44 104H130M430 104H516M44 156H130M430 156H516"/></g>
-  <g stroke-width=".9"><circle cx="70" cy="130" r="3"/><circle cx="92" cy="130" r="3"/><circle cx="114" cy="130" r="3"/><circle cx="446" cy="130" r="3"/><circle cx="468" cy="130" r="3"/><circle cx="490" cy="130" r="3"/></g>
-  <rect x="150" y="62" width="260" height="136" rx="16" fill="#F6F4EF" stroke-width="1.8"/>
-  <rect x="164" y="76" width="232" height="108" rx="9"/>
-  <rect class="part" data-i="1" x="180" y="92" width="100" height="76" fill="#EFECE4"/>
-  <rect x="190" y="112" width="44" height="34" stroke-width="1"/><path d="M196 120h32M196 127h32M196 134h32" stroke-width=".6"/>
-  <text x="188" y="104" fill="#18181B" stroke="none" font-family="JetBrains Mono,monospace" font-size="9">ESP32-S3</text>
-  <circle cx="258" cy="130" r="7"/>
-  <g class="part" data-i="2" fill="#18181B" stroke="none"><circle cx="302" cy="100" r="2.2"/><circle cx="311" cy="100" r="2.2"/><circle cx="320" cy="100" r="2.2"/><circle cx="306" cy="109" r="2.2"/><circle cx="315" cy="109" r="2.2"/></g>
-  <g id="trig" role="button" tabindex="0" aria-label="Press to speak" aria-pressed="false"><circle class="ring" cx="346" cy="140" r="14"/><circle class="ring r2" cx="346" cy="140" r="14"/><circle class="ring r3" cx="346" cy="140" r="14"/><circle class="part" data-i="3" cx="346" cy="140" r="24" stroke-width="1.8" fill="#F6F4EF"/><circle class="core" cx="346" cy="140" r="14" stroke="none"/></g>
-  <circle id="led" class="part" data-i="4" cx="378" cy="94" r="4" fill="#E85D04" stroke="none" style="opacity:.35;transition:.3s"/>
-  <g class="leaders" stroke-width=".8"><path d="M230 92V30M311 100V30M346 116L400 30M378 90L470 30" /></g>
-  <g class="badge" data-i="1" tabindex="0" role="button" aria-label="Part 1: ESP32-S3"><circle cx="230" cy="28" r="12"/><text x="230" y="32">1</text></g>
-  <g class="badge" data-i="2" tabindex="0" role="button" aria-label="Part 2: microphones"><circle cx="311" cy="28" r="12"/><text x="311" y="32">2</text></g>
-  <g class="badge" data-i="3" tabindex="0" role="button" aria-label="Part 3: trigger"><circle cx="400" cy="28" r="12"/><text x="400" y="32">3</text></g>
-  <g class="badge" data-i="4" tabindex="0" role="button" aria-label="Part 4: status light"><circle cx="470" cy="28" r="12"/><text x="470" y="32">4</text></g>
-  <g stroke="#52525B" stroke-width=".8"><path d="M150 222H410M150 216v12M410 216v12"/></g><text x="228" y="240" fill="#52525B" stroke="none" font-family="JetBrains Mono,monospace" font-size="9">42 mm · target</text>
- </svg>
- <div class="readout"><div class="mono">Voice note</div><div class="tx" id="tx" aria-live="polite"></div><div class="rchips" id="rchips"></div>
-  <div class="hint partinfo" id="partinfo"></div></div>
-</div>
-</div></section>
-
-<div class="marq" aria-hidden="true"><div>
-<span>Unobvious OS · Private alpha</span><span>Voice-first, screenless</span><span>Bengaluru</span><span>Calm technology</span><span>Agora · Curation engine live</span><span>Built for the people the giants won’t build for</span><span>Ask before acting</span><span>Foundry · Vendor mapping</span>
-<span>Unobvious OS · Private alpha</span><span>Voice-first, screenless</span><span>Bengaluru</span><span>Calm technology</span><span>Agora · Curation engine live</span><span>Pilots in Bengaluru</span><span>Ask before acting</span><span>Foundry · Vendor mapping</span>
-</div></div>
-
-<section class="sec" id="method"><div class="wrap">
- <div class="eyebrow mono reveal"><span>01</span><span>How we think</span></div>
- <h2 class="reveal" style="max-width:15em">Every project starts with a person and works <em>backwards.</em></h2>
- <div class="thesis">
-  <div class="st" data-n="1"><b>The person</b><span>What does their day actually look like?</span></div>
-  <div class="st" data-n="2" style="transition-delay:.15s"><b>The system</b><span>Remove the steps that shouldn&rsquo;t exist.</span></div>
-  <div class="st" data-n="3" style="transition-delay:.3s"><b>The product</b><span>Small, calm and finished.</span></div>
-  <div class="st" data-n="4" style="transition-delay:.45s"><b>The institution</b><span>When a product alone isn&rsquo;t enough.</span></div>
+ <div>
+  <div class="eyebrow">Unobvious · a lab in Bengaluru</div>
+  <h1>A lab for making everyday life <em>simpler.</em></h1>
+  <p class="lede">Most technology asks for more of your attention. We build the quiet kind: tools, systems and places that take care of the small stuff, so you can get on with your life.</p>
+  <div class="cta"><a class="btn primary" href="os.html">See what we&rsquo;re building <span class="ar">→</span></a><a class="btn ghost" href="{{JOIN}}">Join the private alpha</a></div>
  </div>
- <div class="stats reveal">
-  <div><b data-count="7">00</b><span>Projects on the bench</span></div>
-  <div><b data-count="2">00</b><span>In private alpha</span></div>
-  <div><b data-count="2">00</b><span>Working MVPs</span></div>
-  <div><b data-count="3">00</b><span>Prototype, concept or planning</span></div>
+ <div class="stack reveal" aria-label="Experiments in the lab">
+  <div class="mono cap">On the bench</div>
+  <a class="xcard live" href="os.html"><div><span class="xno">EXPERIMENT 001</span><h3>Unobvious OS</h3><p>An assistant you never have to look at.</p></div><span class="go">Open <span>→</span></span></a>
+  <button class="xcard" type="button"><span class="bars" aria-hidden="true"><span class="xno">002</span><i style="width:72%"></i><i style="width:46%"></i></span><span class="teaser">A reading room with no feed.</span></button>
+  <button class="xcard" type="button"><span class="bars" aria-hidden="true"><span class="xno">003</span><i style="width:64%"></i><i style="width:52%"></i></span><span class="teaser">A way to make real things in India, without the runaround.</span></button>
+  <button class="xcard" type="button"><span class="bars" aria-hidden="true"><span class="xno">004</span><i style="width:78%"></i><i style="width:38%"></i></span><span class="teaser">A school designed around the learner.</span></button>
+  <button class="xcard" type="button"><span class="bars" aria-hidden="true"><span class="xno">005</span><i style="width:58%"></i><i style="width:60%"></i></span><span class="teaser">One good answer instead of ten thousand listings.</span></button>
  </div>
 </div></section>
 
-<section class="sec" id="lab" style="border-top:1px solid var(--ink)"><div class="wrap">
- <div class="sh reveal"><div><div class="eyebrow mono"><span>02</span><span>The lab index</span></div><h2>What&rsquo;s on the bench.</h2></div>
-  <div><div class="filters" role="group" aria-label="Filter projects"><button class="fbtn" data-f="all" aria-pressed="true">All</button><button class="fbtn" data-f="live" aria-pressed="false">Live</button><button class="fbtn" data-f="build" aria-pressed="false">Building</button><button class="fbtn" data-f="concept" aria-pressed="false">Concept</button></div><div class="mono" id="fcount" style="margin-top:12px;text-align:right">6 projects</div></div></div>
- <div class="bento">
-  <button class="card big reveal" data-id="os" data-s="live"><div class="top"><div><div class="no">001</div><span class="status live" style="display:inline-block;margin-top:10px"><span class="dot live" style="background:var(--signal)"></span>Private alpha</span></div>
-   <svg class="gl" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="32" cy="32" r="6" fill="currentColor" stroke="none"/><circle cx="32" cy="32" r="15"/><circle cx="32" cy="32" r="26" stroke-dasharray="3 4"/></svg></div>
-   <div class="wave" aria-hidden="true"><i style="animation-delay:0s"></i><i style="animation-delay:.1s"></i><i style="animation-delay:.2s"></i><i style="animation-delay:.3s"></i><i style="animation-delay:.4s"></i><i style="animation-delay:.5s"></i><i style="animation-delay:.6s"></i><i style="animation-delay:.7s"></i><i style="animation-delay:.8s"></i><i style="animation-delay:.9s"></i><i style="animation-delay:1s"></i><i style="animation-delay:1.1s"></i></div>
-   <h3>Unobvious OS</h3><p>A voice-first, screenless chief of staff and life planner for audio and wrist wearables. Where we start.</p><div class="more"><span>Gen-1 hardware prototyping</span><span>Open →</span></div></button>
-  <button class="card reveal" data-id="agora" data-s="live" style="--d:.08s"><div class="top"><div><div class="no">002</div><span class="status live" style="display:inline-block;margin-top:10px">Private alpha</span></div>
-   <svg class="gl" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M32 32m0 0a4 4 0 1 1 8 0a10 10 0 1 1-20 0a16 16 0 1 1 32 0a22 22 0 1 1-44 0"/></svg></div>
-   <h3>Agora</h3><p>A non-social reading platform. Trajectory curation instead of outrage feeds.</p><div class="more"><span>Curation engine live</span><span>Open →</span></div></button>
-  <button class="card reveal" data-id="socratic" data-s="live" style="--d:.16s"><div class="top"><div><div class="no">003</div><span class="status live" style="display:inline-block;margin-top:10px">Working MVP</span></div>
-   <svg class="gl" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 56V44h12V32h12V20h12V8h12v48z"/></svg></div>
-   <h3>Socratic Foundry</h3><p>A learning companion that turns daily curiosity into 15-minute deep dives.</p><div class="more"><span>Beta testing</span><span>Open →</span></div></button>
-  <button class="card reveal" data-id="zero" data-s="build" style="--d:.08s"><div class="top"><div><div class="no">004</div><span class="status build" style="display:inline-block;margin-top:10px">Prototype</span></div>
-   <svg class="gl" viewBox="0 0 64 64" stroke="none" fill="currentColor"><g opacity=".35"><circle cx="12" cy="12" r="2.5"/><circle cx="26" cy="12" r="2.5"/><circle cx="40" cy="12" r="2.5"/><circle cx="54" cy="12" r="2.5"/><circle cx="12" cy="26" r="2.5"/><circle cx="26" cy="26" r="2.5"/><circle cx="54" cy="26" r="2.5"/><circle cx="12" cy="40" r="2.5"/><circle cx="26" cy="40" r="2.5"/><circle cx="40" cy="40" r="2.5"/><circle cx="54" cy="40" r="2.5"/><circle cx="12" cy="54" r="2.5"/><circle cx="26" cy="54" r="2.5"/><circle cx="40" cy="54" r="2.5"/><circle cx="54" cy="54" r="2.5"/></g><circle cx="40" cy="26" r="6" fill="#E85D04"/></svg></div>
-   <h3>Zero-Scroll Commerce</h3><p>Ten thousand listings reduced to one high-trust match.</p><div class="more"><span>Internal testing</span><span>Open →</span></div></button>
-  <button class="card reveal" data-id="kibble" data-s="live" style="--d:.16s"><div class="top"><div><div class="no">005</div><span class="status live" style="display:inline-block;margin-top:10px">Working MVP</span></div>
-   <svg class="gl" viewBox="0 0 64 64" fill="currentColor"><ellipse cx="32" cy="42" rx="13" ry="10"/><ellipse cx="14" cy="28" rx="5" ry="6.5"/><ellipse cx="26" cy="17" rx="5" ry="6.5"/><ellipse cx="38" cy="17" rx="5" ry="6.5"/><ellipse cx="50" cy="28" rx="5" ry="6.5"/></svg></div>
-   <h3>Kibble &amp; Kindred</h3><p>Daily nutrition and preventive care for pets, turned into a plan.</p><div class="more"><span>Beta cohort</span><span>Open →</span></div></button>
-  <button class="card reveal" data-id="foundry" data-s="concept" style="--d:.24s"><div class="top"><div><div class="no">006</div><span class="status" style="display:inline-block;margin-top:10px">Concept</span></div>
-   <svg class="gl" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 54V10h8v36h36v8z"/><path d="M18 18h6M18 26h10M18 34h6M26 46v-6M34 46v-10M42 46v-6"/></svg></div>
-   <h3>Foundry</h3><p>The capability graph for Indian builders, from unit one to scale.</p><div class="more"><span>Vendor mapping · Bengaluru</span><span>Open →</span></div></button>
-  <button class="card reveal" data-id="youth" data-s="concept" style="--d:.32s"><div class="top"><div><div class="no">007</div><span class="status" style="display:inline-block;margin-top:10px">In planning</span></div>
-   <svg class="gl" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="18" cy="42" r="10"/><rect x="34" y="32" width="20" height="20"/><path d="M32 8L44 28H20z"/></svg></div>
-   <h3>Youth Design Labs</h3><p>An after-school program where kids redesign everyday systems from first principles.</p><div class="more"><span>Bengaluru · ages 10–15</span><span>Open →</span></div></button>
+<section class="sec tint"><div class="wrap split">
+ <div class="reveal">
+  <div class="eyebrow">Experiment 001</div>
+  <h2>An assistant you never have to look at.</h2>
+  <p>Press a button, say what is on your mind, and put your phone away. Unobvious OS sorts it into thoughts, ideas and decisions, then quietly handles the rest: your calendar, your messages, the reorder you keep forgetting. Anything that reaches other people waits for your OK.</p>
+  <div class="cta"><a class="btn primary" href="os.html">See how it works <span class="ar">→</span></a></div>
  </div>
- <p class="mono" style="margin-top:20px">Statuses are literal. More entries arrive on their own subdomains.</p>
-</div></section>
-
-{{manifesto}}
-
-<section class="sec" id="os"><div class="wrap">
- <div class="sh reveal"><div><div class="eyebrow mono"><span>03</span><span>Entry 001 in depth</span></div><h2>Talk to it. It <em>sorts the mess.</em></h2></div>
-  <p class="lede">Every voice note is split into loose ideas, firm decisions and how you&rsquo;re doing, then routed to the right agent. Anything that touches the outside world waits for your one tap.</p></div>
- <div class="reveal">{{triage}}</div>
- <div class="flow">
-  <div><i>01</i><b>Listen</b><span>A short burst, not a session</span></div><div style="transition-delay:.1s"><i>02</i><b>Triage</b><span>Idea, decision or state</span></div><div style="transition-delay:.2s"><i>03</i><b>Route</b><span>Small, scoped agents</span></div><div style="transition-delay:.3s"><i>04</i><b>Confirm</b><span>One tap for anything external</span></div><div style="transition-delay:.4s"><i>05</i><b>Act</b><span>Execute, remember, go quiet</span></div>
- </div>
- <div class="eyebrow mono" style="margin-top:72px"><span>Hardware path · plan</span></div>
- <div class="phases reveal" style="margin-top:0">
-  <div class="phase"><span class="mono">Months 1–2</span><b>Software MVP</b><span>Existing earbuds and watches. Prove the triage and life-planning loop before any custom hardware.</span></div>
-  <div class="phase"><span class="mono">Months 3–5</span><b>Breadboard prototype</b><span>ESP32-S3 or nRF5340, omnidirectional MEMS mic, tactile button, linear haptic actuator.</span></div>
-  <div class="phase"><span class="mono">Months 5–7</span><b>BLE burst relay</b><span>Voice compressed on-chip and sent to the phone in bursts, targeting 5–7 days of battery.</span></div>
-  <div class="phase"><span class="mono">Months 8–12</span><b>Closed beta</b><span>Waterproof enclosure, a 100-user closed beta, then hardware plus a monthly subscription.</span></div>
- </div>
- <p class="mono note">Targets, not commitments. No ads, no engagement metrics: you pay for the utility.</p>
- <div class="cta" style="justify-content:center;margin-top:36px"><a class="btn" href="architecture.html">See the architecture <span class="ar">→</span></a></div>
-</div></section>
-
-<section class="sec" id="foundry" style="background:var(--paper-2);border-block:1px solid var(--ink)"><div class="wrap">
- <div class="sh reveal"><div><div class="eyebrow mono"><span>04</span><span>The manufacturing layer · Concept</span></div><h2>Making real things <em>shouldn&rsquo;t depend on who you know.</em></h2></div>
-  <p class="lede">Foundry is the layer we&rsquo;re mapping next: plain-language ideas in, verified Indian makers and photo-proven milestones out. No more back-and-forth on WhatsApp.</p></div>
- <div class="stepper reveal"><div class="steps" role="tablist" aria-label="How Foundry works"></div>
-  <div class="stage"><div class="mono">Illustrative example · concept, not live</div><h3 id="sh3"></h3><p id="sp"></p><div class="mock" id="smock"></div></div></div>
-</div></section>
-
-<section class="sec" id="roadmap"><div class="wrap">
- <div class="sh reveal"><div><div class="eyebrow mono"><span>05</span><span>Roadmap</span></div><h2>Now, next, later.</h2></div></div>
- <div class="road">
-  <div class="col now reveal"><div class="mono"><span class="dot live"></span>Now</div><h3>In people&rsquo;s hands</h3><ul><li>Unobvious OS private alpha</li><li>Gen-1 wearable prototyping</li><li>Agora curation engine live</li><li>Socratic Foundry and Kibble &amp; Kindred in beta</li></ul></div>
-  <div class="col reveal" style="--d:.1s"><div class="mono">Next</div><h3>Getting sturdier</h3><ul><li>Zero-Scroll Commerce beta</li><li>Foundry vendor mapping in Bengaluru</li><li>Youth Design Labs, first proof workshop</li></ul></div>
-  <div class="col reveal" style="--d:.2s"><div class="mono">Later</div><h3>Widening the lab</h3><ul><li>New entries on their own subdomains</li><li>The manufacturing layer, live</li><li>Institutions, where a product isn&rsquo;t enough</li></ul></div>
+ <div class="surface mini reveal" data-note="Brain fog is heavy today. Push the vendor call to Thursday and queue something good for my evening walk." data-outs='[["state","THOUGHT","Afternoon turned into recovery"],["firm","DECISION","Vendor call moved to Thursday"],["","IDEA","An essay queued for your walk"]]'>
+  <div class="mono">You said</div><div class="tx" aria-live="polite"></div><div class="rchips"></div>
  </div>
 </div></section>
 
+<section class="sec"><div class="wrap">
+ <div class="reveal"><div class="eyebrow">How we work</div><h2 style="margin-top:16px;max-width:14em">Three rules we don&rsquo;t break.</h2></div>
+ <div class="rules">
+  <div class="rule reveal"><h3>Start with an ordinary day.</h3><p>We look at how people actually live before we build anything, then fix the friction we find.</p></div>
+  <div class="rule reveal" style="--d:.1s"><h3>Remove steps, don&rsquo;t add features.</h3><p>If something takes ten taps, the answer is not a better menu. It is making the ten taps unnecessary.</p></div>
+  <div class="rule reveal" style="--d:.2s"><h3>Ask first, then act.</h3><p>Our tools never send, buy or change anything that touches other people without your say-so.</p></div>
+ </div>
+</div></section>
+
+<section class="quote"><div class="wrap reveal"><blockquote>Unobvious exists for the people the giants won&rsquo;t build for.</blockquote><a href="about.html">Read why we&rsquo;re here →</a></div></section>
+
+<div style="height:clamp(72px,10vw,136px)"></div>
 {{cta}}
-<dialog id="pdlg" aria-labelledby="dtitle"><div class="dh"><span class="mono dn"></span><button class="xbtn" type="button">Close ✕</button></div><div class="db"><h3 id="dtitle"></h3><p class="tl"></p><dl></dl></div></dialog>
 </main>

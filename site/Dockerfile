@@ -2,7 +2,7 @@
 # Deploy from the site/ directory. Railway injects $PORT; nginx's template step fills it in.
 FROM nginx:1.27-alpine
 COPY nginx.conf.template /etc/nginx/templates/default.conf.template
-COPY index.html products.html architecture.html about.html privacy.html terms.html /usr/share/nginx/html/
+COPY index.html os.html about.html privacy.html terms.html /usr/share/nginx/html/
 COPY assets /usr/share/nginx/html/assets
 ENV PORT=8080
 EXPOSE 8080

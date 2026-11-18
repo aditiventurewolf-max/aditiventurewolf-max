@@ -1,3 +1,2 @@
-<section class="cta-big"><div class="wrap reveal"><div class="mono" style="margin-bottom:20px"><span class="dot live"></span>Private alpha</div>
-<h2>Calm technology for people who&rsquo;d rather be <em>looking up.</em></h2>
-<div class="cta"><a class="btn primary" href="{{CONTACT}}">Join the private alpha <span class="ar">→</span></a><a class="btn" href="about.html">Meet the studio <span class="ar">→</span></a></div></div></section>
+<section class="sec" style="padding-top:0"><div class="wrap"><div class="join reveal"><div><div class="eyebrow">Private alpha</div><h2 style="margin-top:14px">Want an early look?</h2><p>The alpha is small on purpose. Write to us and tell us a little about how you would use it.</p></div>
+<div class="side"><a class="btn primary" href="{{JOIN}}">Ask for early access <span class="ar">→</span></a><span class="addr">{{EMAIL:contact}}</span></div></div></div></section>

@@ -1,0 +1,85 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unobvious OS · An assistant you never look at</title><meta name="description" content="Unobvious OS: press a button, say what is on your mind, and put your phone away. It sorts, handles what it can, and asks before it acts."><meta name="theme-color" content="#F3F5F2">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css"></head><body data-proto>
+<header class="hdr"><div class="wrap"><a class="brand" href="index.html"><i></i>Unobvious</a>
+<button class="burger" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav class="nav" id="nav"><a data-page="index.html" href="index.html">Lab</a><a data-page="os.html" href="os.html">Unobvious OS</a><a data-page="about.html" href="about.html">About</a><a class="pill" href="mailto:contact@unobvious.in?subject=Private%20alpha">Join the alpha</a></nav></div></header><main>
+<section class="hero hero-os"><div class="wrap grid">
+ <div>
+  <div class="eyebrow">Experiment 001 · Private alpha</div>
+  <h1>An assistant you talk to, <em>not one you look at.</em></h1>
+  <p class="lede">Press a button, say what is on your mind, and put your phone away. Unobvious OS sorts it, handles what it can, and checks with you before anything leaves your hands.</p>
+  <div class="cta"><a class="btn primary" href="mailto:contact@unobvious.in?subject=Private%20alpha">Ask for early access <span class="ar">→</span></a><a class="btn ghost" href="#day">A day with it</a></div>
+  <p class="note">The dedicated wrist companion is in early prototyping. The drawing shows the design, and sizes are targets.</p>
+ </div>
+ <div class="bench reveal" id="device">
+ <div class="bench-h mono"><span><span class="dot live"></span>The wrist companion</span><span>Prototype drawing</span></div>
+ <svg viewBox="0 0 560 250" role="group" aria-label="Interactive drawing of the Gen-1 wrist companion" fill="none" stroke="#18181B" stroke-width="1.3">
+  <path d="M20 112Q20 88 46 88L130 94H430L514 88Q540 88 540 112V148Q540 172 514 172L430 166H130L46 172Q20 172 20 148Z" fill="#F6F4EF"/>
+  <g stroke-dasharray="3 3" stroke="#52525B"><path d="M44 104H130M430 104H516M44 156H130M430 156H516"/></g>
+  <g stroke-width=".9"><circle cx="70" cy="130" r="3"/><circle cx="92" cy="130" r="3"/><circle cx="114" cy="130" r="3"/><circle cx="446" cy="130" r="3"/><circle cx="468" cy="130" r="3"/><circle cx="490" cy="130" r="3"/></g>
+  <rect x="150" y="62" width="260" height="136" rx="16" fill="#F6F4EF" stroke-width="1.8"/>
+  <rect x="164" y="76" width="232" height="108" rx="9"/>
+  <rect class="part" data-i="1" x="180" y="92" width="100" height="76" fill="#EFECE4"/>
+  <rect x="190" y="112" width="44" height="34" stroke-width="1"/><path d="M196 120h32M196 127h32M196 134h32" stroke-width=".6"/>
+  <text x="188" y="104" fill="#18181B" stroke="none" font-family="JetBrains Mono,monospace" font-size="9">ESP32-S3</text>
+  <circle cx="258" cy="130" r="7"/>
+  <g class="part" data-i="2" fill="#18181B" stroke="none"><circle cx="302" cy="100" r="2.2"/><circle cx="311" cy="100" r="2.2"/><circle cx="320" cy="100" r="2.2"/><circle cx="306" cy="109" r="2.2"/><circle cx="315" cy="109" r="2.2"/></g>
+  <g id="trig" role="button" tabindex="0" aria-label="Press to speak" aria-pressed="false"><circle class="ring" cx="346" cy="140" r="14"/><circle class="ring r2" cx="346" cy="140" r="14"/><circle class="ring r3" cx="346" cy="140" r="14"/><circle class="part" data-i="3" cx="346" cy="140" r="24" stroke-width="1.8" fill="#F6F4EF"/><circle class="core" cx="346" cy="140" r="14" stroke="none"/></g>
+  <circle id="led" class="part" data-i="4" cx="378" cy="94" r="4" fill="#E85D04" stroke="none" style="opacity:.35;transition:.3s"/>
+  <g class="leaders" stroke-width=".8"><path d="M230 92V30M311 100V30M346 116L400 30M378 90L470 30" /></g>
+  <g class="badge" data-i="1" tabindex="0" role="button" aria-label="Part 1: ESP32-S3"><circle cx="230" cy="28" r="12"/><text x="230" y="32">1</text></g>
+  <g class="badge" data-i="2" tabindex="0" role="button" aria-label="Part 2: microphones"><circle cx="311" cy="28" r="12"/><text x="311" y="32">2</text></g>
+  <g class="badge" data-i="3" tabindex="0" role="button" aria-label="Part 3: trigger"><circle cx="400" cy="28" r="12"/><text x="400" y="32">3</text></g>
+  <g class="badge" data-i="4" tabindex="0" role="button" aria-label="Part 4: status light"><circle cx="470" cy="28" r="12"/><text x="470" y="32">4</text></g>
+  <g stroke="#52525B" stroke-width=".8"><path d="M150 222H410M150 216v12M410 216v12"/></g><text x="228" y="240" fill="#52525B" stroke="none" font-family="JetBrains Mono,monospace" font-size="9">42 mm · target</text>
+ </svg>
+ <div class="readout"><div class="mono">Voice note</div><div class="tx" id="tx" aria-live="polite"></div><div class="rchips" id="rchips"></div>
+  <div class="hint partinfo" id="partinfo"></div></div>
+</div>
+</div></section>
+
+<section class="sec tint" id="day"><div class="wrap">
+ <div class="reveal"><div class="eyebrow">A day with it</div><h2 style="margin-top:16px;max-width:12em">Less looking down.</h2></div>
+ <div class="days">
+  <div class="day reveal"><div class="when">Morning · 60 seconds</div><h3>A short spoken brief</h3><p>Your top three priorities, anything unusual about the day, and one piece worth reading on your walk. Then you are done.</p></div>
+  <div class="day reveal" style="--d:.1s"><div class="when">Midday · protected</div><h3>Deep work stays quiet</h3><p>Non-urgent messages wait. Nothing buzzes unless it truly cannot.</p></div>
+  <div class="day reveal" style="--d:.2s"><div class="when">Evening · closure</div><h3>The day ends cleanly</h3><p>It notes what moved forward, parks what did not, and silences everything that is not an emergency.</p></div>
+ </div>
+ <div class="fog reveal"><div class="ic">~</div><div><h3>On a foggy day</h3><p>Tell it you are running on empty. It turns the afternoon into recovery, moves what can wait, and writes the polite note to reschedule.</p></div></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+ <div class="reveal"><div class="eyebrow">Try it</div><h2 style="margin:16px 0 18px;max-width:12em">Say it messy. It sorts it.</h2><p class="lede">Every note becomes a thought, an idea or a decision. Ideas are kept safe without cluttering your to-do list. Decisions turn into action.</p></div>
+ <div class="reveal"><div class="triage">
+ <div class="tri-in"><div class="mono">Pick a voice note</div><div class="chips" id="chips"></div><div class="mono">Transcript</div><div class="transcript" id="transcript" aria-live="polite"></div></div>
+ <div class="tri-out"><div class="mono">Sorted</div><div id="tri-out" aria-live="polite"></div>
+  <div class="approve" id="approve"><div class="mono"><span class="dot"></span>Approval card</div><p class="q" style="font-size:15px;margin-top:6px"></p><button type="button">Approve</button></div></div>
+</div><p class="mono note">Simulated preview with example notes. No data is sent anywhere.</p>
+</div>
+</div></section>
+
+<section class="sec tint"><div class="wrap">
+ <div class="reveal"><div class="eyebrow">Trust</div><h2 style="margin-top:16px;max-width:12em">It asks before it acts.</h2></div>
+ <div class="twoup">
+  <div class="panel reveal"><div class="eyebrow">Does quietly</div><h3>Things only you see</h3><ul><li>Sorting your notes</li><li>Saving ideas for later</li><li>Queueing something to read</li><li>Protecting your rest time</li><li>Researching in the background</li></ul></div>
+  <div class="panel hot reveal" style="--d:.1s"><div class="eyebrow">Needs your tap</div><h3>Anything that reaches others</h3><ul><li>Sending a message or email</li><li>Changing a shared calendar invite</li><li>Any purchase or payment</li></ul></div>
+ </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+ <div class="reveal"><div class="eyebrow">Under the hood</div><h2 style="margin-top:16px;max-width:14em">Fast on the device, thoughtful in the cloud.</h2></div>
+ <div class="facts3">
+  <div class="reveal"><h3>Short bursts</h3><p>Your voice is compressed on the device and sent to your phone in short bursts. It listens when you press, not all the time.</p></div>
+  <div class="reveal" style="--d:.1s"><h3>Small, focused agents</h3><p>Separate agents handle planning, messages, errands and reading, coordinated by a light router so nothing waits on everything else.</p></div>
+  <div class="reveal" style="--d:.2s"><h3>Private by design</h3><p>Built on Google Cloud and Vertex AI. No ads, and we do not sell your data. Read the <a href="privacy.html">privacy policy</a>.</p></div>
+ </div>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap"><div class="join reveal"><div><div class="eyebrow">Private alpha</div><h2 style="margin-top:14px">Want an early look?</h2><p>The alpha is small on purpose. Write to us and tell us a little about how you would use it.</p></div>
+<div class="side"><a class="btn primary" href="mailto:contact@unobvious.in?subject=Private%20alpha">Ask for early access <span class="ar">→</span></a><span class="addr">contact@unobvious.in</span></div></div></div></section>
+</main><footer><div class="wrap"><div class="row"><div><a class="brand" href="index.html"><i></i>Unobvious</a>
+<p>An independent lab in Bengaluru, working on technology that gives people their attention back.<br>© Avaia Innovations (OPC) Private Limited</p></div>
+<div class="links"><a href="index.html">Lab</a><a href="os.html">Unobvious OS</a><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></div></footer>
+<script src="assets/triage.js"></script><script src="assets/app.js"></script></body></html>
