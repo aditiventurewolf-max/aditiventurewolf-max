@@ -12,6 +12,16 @@ The current Home 7 hero shows a device. That's why it feels boring: a device on 
 
 So the 3D object should not be admired. It should be **followed**. One press sends one thought out of the wrist, through the system, into the world and back, and the person never looks at a screen. That journey is the showcase.
 
+### The second shift: the mess is the point
+
+A builder's head is not a tidy to-do list. It's half-sentences, "that guy from that thing", an idea for cat clothes, a reel you'll never film, and a deadline you half-remember, all while walking. Writing it down on the go is nearly impossible, so most of it is lost.
+
+**Unobvious doesn't ask you to be organised. It takes the mess as it comes and makes it clear.** That makes the chaos a feature, not a problem to hide.
+
+> **Chaos in. Clarity out.**
+
+This becomes a design principle for the whole site (section 5), not just the demo.
+
 ---
 
 ## 1. What the market tells us
@@ -56,31 +66,54 @@ So the 3D object should not be admired. It should be **followed**. One press sen
 
 A scroll-driven story in six acts. The camera **follows one thought**, the way United Carriers follows one container and Worldline pushes into one screen. The 3D device appears at the start and the end. In between, the system is the subject.
 
-### The example thought
+### The example: a real brain dump
 
-Use this note throughout, so the visitor can track it. It's ordinary and humane:
+The old example (move a meeting, order rice) was too tidy. Real speech is messy, so the demo should be too: fun, specific, half-formed, and recognisably a founder's. Spoken on a walk, about 25 seconds, filler and all:
 
-> "Running on empty. Move my three o'clock to Thursday, order more rice, and find me something for my walk."
+> "Okay so, um, that guy from yesterday, the maker thing, Rohan? Send him the proposal. The after-school one, the alternative education thing we talked about. Use the background from my notes. Oh, and wait. Cat clothing. Like clothes for cats, but actually useful? Cooling, maybe? Don't do anything, just put it somewhere, I want to research it later. There's also a reel in this somewhere, about how messy my head is. Make me actually film it. Aaand that fellowship, the deadline's soon, right? Don't let me miss it."
 
-### Act 0 · The loop (the villain)
+*(Rohan, the meetup and the fellowship are fictional placeholders for the demo.)*
 
-- **Scene:** dark, grainy. A phone glows face-up. Notifications stack and flicker (the noise words from Home 7, moved here). A thumb-scroll motion loops.
-- **Scroll does:** the noise intensifies, then the phone **turns face down**. The glow goes out.
-- **Caption:** *Most days are run by a screen.*
-- **Why first:** the problem lands before the product appears. The page opens on a feeling, not a gadget.
+**What the system makes of it.** Four very different kinds of thing, from one breath:
+
+| Fragment | Kind | Station | What happens | Asks first? |
+|---|---|---|---|---|
+| "That guy from yesterday, the maker thing… send him the proposal" | Decision | Messages + Memory | Works out who "that guy" is from yesterday's calendar and notes. Drafts the after-school proposal from the alternative-education notes | **Yes.** The draft waits at the gate |
+| "Cat clothing… just put it somewhere" | Idea | Memory → Ideas | A new row in the Ideas database: *Functional cat clothing (cooling?)*, tagged "research later", with three open questions. Nothing else happens | No, it's only saved |
+| "A reel… make me actually film it" | Idea + nudge | Memory + Planner | Saved with your own line ("how messy my head is") as the hook. A gentle prompt on Sunday morning: *"Want to film the reel? Your hook's ready."* | No, it's a nudge, not an action |
+| "That fellowship… don't let me miss it" | Decision | Planner | Finds the deadline in your email, adds it to the calendar with two writing blocks, and reminds you five days before | No, it only touches your own calendar |
+
+**One clarifying question.** The system checks a single ambiguity rather than guessing: *"Rohan from yesterday's maker meetup, or Rohan from the investor email? I think the meetup."* One tap answers it. This shows it's careful without being needy.
+
+**Why this example wins:**
+- **It's fun and true.** The cat clothing line gets a smile, and every founder recognises the rest.
+- **It shows range.** In one breath: a message to a person, a database entry, a future nudge, and a deadline.
+- **It shows the brain work.** "That guy from that thing" being resolved is the moment people will remember.
+- **It shows the gate.** Only the proposal, the one thing that reaches another person, waits for a tap.
+
+### Act 0 · The mess (two kinds of noise)
+
+- **Scene:** a figure walking, made of thought fragments. This is your "Thoughts are not real, but they are loud" reference.
+  - **The fragments:** "Rohan?", "the after-school thing", "cat clothes??", "reel idea", "fellowship deadline??", "background from my notes", "wait—".
+  - **The look:** different sizes, half-typed, crossed out, rotated, overlapping, drifting.
+  - **The phone:** glows in one hand, adding outer noise (notifications) to the inner noise.
+- **Scroll does:** the mess gets louder and faster. The person tries to type it into the phone; the text field fills with typos and gives up. Then the phone **turns face down**.
+- **Caption:** *Your head is busy. Writing it down shouldn't be another job.*
+- **Why first:** every visitor sees their own head. The problem lands as recognition, before any product appears.
 
 ### Act 1 · The press
 
 - **Scene:** a wrist in soft focus with one warm light (a photo plate, not a 3D human). The device sits on it, sharp inside the focus frame.
 - **Interaction:** **the visitor presses**. Press and hold the device, or the space bar. The amber status light comes on and a ripple leaves the button. If they only scroll, it plays on its own.
-- **Caption:** *This one starts with a press.*
+- **Caption:** *So don't write it down. Say it.*
 
 ### Act 2 · The thought leaves the wrist
 
 - **Scene:** the voice becomes a **filament of warm light** leaving the button. The camera follows it out:
   - **The face-down phone:** the filament passes through it as a quiet relay, labelled "BLE burst, phone stays face down".
   - **The system:** the filament rises into open dark space.
-- **Caption:** *You say it once. Your phone stays face down.*
+- **Caption:** *Say it messy. Your phone stays face down.*
+- **Detail:** the spoken monologue plays as live captions, filler words and all ("um", "wait", "aaand"). Don't clean it up. The mess is the point.
 - **Signature beat:** the phone appears in the system and is used, but is **never looked at**.
 
 ### Act 3 · The system
@@ -97,18 +130,18 @@ Use this note throughout, so the visitor can track it. It's ordinary and humane:
   | Care | Pets | Kibble and Kindred |
   | Memory | What it keeps | — |
 
-- **Scroll does:** the thought **splits into three lights** (thought, decision, idea). Each flies to its station, which wakes up:
-  - "Running on empty" goes to **Planner**: the afternoon becomes recovery time.
-  - "Move my three o'clock" goes to **Messages**: a polite note is drafted.
-  - "Order more rice" goes to **Errands**: one trusted match is queued.
-  - "Something for my walk" goes to **Reading**: one essay is queued.
-- **Caption:** *Behind one button, a quiet system.*
+- **Scroll does:** **chaos to clarity, made literal.**
+  - **Sorting:** the drifting fragments from Act 0 are pulled out of the noise one by one. Each one straightens, sharpens and lines up, and flies to its station (see the table in section 2), which wakes up.
+  - **Resolving:** "that guy from that thing" visibly resolves into a name card ("Rohan · maker meetup · yesterday").
+  - **Saving:** "cat clothes??" lands as a neat database row.
+  - **Discarding:** the filler ("um", "wait", "aaand") falls away and blurs out. It's the only thing the system throws away.
+- **Caption:** *It keeps the mess. It gives you back the meaning.*
 - **Why this matters:** this is the "ecosystem that runs everything". It also solves the lab-vs-product question on the home page. **The lab's other experiments are stations in the same system.** The lab and the OS become one picture, and new experiments can light up later as new stations.
 
 ### Act 4 · The gate
 
-- **Scene:** the message and the order travel back toward the person and **stop at a gate**: a thin amber line.
-- **Interaction:** the visitor approves with a tap (button: "Send it"). A haptic tick shows on the wrist. Only then do the two lights pass through, out into the world.
+- **Scene:** the clarifying question appears first: *"Rohan from the meetup? I think so."* The visitor taps yes. Then **only the proposal** travels to the gate, a thin amber line. The cat idea, the reel and the deadline are already quietly done; they never needed permission.
+- **Interaction:** the visitor approves with a tap ("Send it"). A haptic tick shows on the wrist, and the proposal passes through, out into the world.
 - **Caption:** *Nothing leaves your hands without you.*
 - **Proof:** this is the trust story, shown rather than claimed, and the clearest line between Unobvious and always-on companions.
 
@@ -116,6 +149,7 @@ Use this note throughout, so the visitor can track it. It's ordinary and humane:
 
 - **Scene:** the stations dim one by one. The constellation folds back into the device's status light, which fades. The camera pulls back and up: the wrist, the person, a window, the horizon plate.
 - **Caption:** *Then it goes quiet. And you look up.*
+- **Coda (small, after the end card):** a single phone-style notification fades in, days later in story time: *"Sunday · Want to film the reel? Your hook's ready: 'how messy my head is.'"* This closes the loop: it remembered so you didn't have to.
 - **End card:** early access, plus *Private alpha · small on purpose*.
 
 ### After the story (the rest of the home page)
@@ -145,10 +179,10 @@ Voice from `DESIGN.md`: calm, plain, on your side.
 
 | Act | Caption |
 |---|---|
-| 0 | Most days are run by a screen. |
-| 1 | This one starts with a press. |
-| 2 | You say it once. Your phone stays face down. |
-| 3 | Behind one button, a quiet system. |
+| 0 | Your head is busy. Writing it down shouldn't be another job. |
+| 1 | So don't write it down. Say it. |
+| 2 | Say it messy. Your phone stays face down. |
+| 3 | It keeps the mess. It gives you back the meaning. |
 | 4 | Nothing leaves your hands without you. |
 | 5 | Then it goes quiet. And you look up. |
 
@@ -160,6 +194,7 @@ Voice from `DESIGN.md`: calm, plain, on your side.
 
 ### Meta
 
+- **Alternative hero (if the mess story leads):** *Chaos in. Clarity out.*
 - **Meta title:** Unobvious OS: you think, it handles the rest
 - **Meta description:** A quiet system behind one button. Say it once; it sorts, acts, and asks before anything leaves your hands. Private alpha, Bengaluru.
 
@@ -209,7 +244,57 @@ Voice from `DESIGN.md`: calm, plain, on your side.
 
 ---
 
-## 5. Risks
+## 5. Design principle for the whole site: chaos in, clarity out
+
+The mess isn't only the demo's subject. It's a visual grammar the whole site can share, so every section shows the product's job without explaining it.
+
+### Two states, one transition
+
+| | Chaos | Clarity |
+|---|---|---|
+| Layout | Scattered, overlapping, rotated, off-grid | On the grid, aligned, hairline-ruled |
+| Type | Mixed sizes, half-words, strike-throughs, filler ("um", "wait") | One scale, full sentences, mono labels |
+| Focus | Blurred, drifting, grainy | Sharp, inside the focus frame |
+| Colour | Many dim tones, notification-ish | Night and moonlight, one amber point |
+| Motion | Jittery, layered, fast | Slow, settled, still |
+
+**The transition is the brand.** On scroll, chaos resolves into clarity. That's the same move as the focus frame and the "Everything else can blur" line, extended into layout and type.
+
+### Where to use it
+
+- **Home hero (Act 0 → 3):** the full story above.
+- **Unobvious OS page:** the day tiles start as a scrawled, messy list and settle into the four clean tiles.
+- **About:** the manifesto can begin as scattered notes and assemble into the paragraph, a nod to how the company itself began.
+- **Lab page:** experiments start as sticky-note fragments ("cat clothes??") and become stations. Honest about being early: *some of these are still just notes.*
+- **404 page:** "This page got lost in the mess." It shows the fragments, with one clear way home.
+
+### Rules so it doesn't become noise
+
+- **Chaos never sits still.** Every chaotic moment resolves within the same screen or scroll step. The visitor always ends in clarity.
+- **Chaos is decorative; clarity is the content.** Anything a visitor must read lives in the clear state.
+- **Reduced motion shows the after, with a small before.** Show the clear state, with a muted thumbnail of the mess beside it.
+- **Use the founder's real kind of mess.** Ideas, people, deadlines and half-plans, not generic notification spam. That's what makes it human and specific to Unobvious.
+
+---
+
+## 6. The reel (same story, 25 seconds)
+
+The showcase doubles as a launch reel for Instagram and LinkedIn. Vertical, handheld, grainy, one warm light.
+
+| Time | Shot | On-screen text / audio |
+|---|---|---|
+| 0–3s | A founder walking, phone in hand, fragments of text swirl around their head | "your brain on a walk:" |
+| 3–9s | Fast cuts: thumbs typing a note, typos, giving up; overlapping thought text ("Rohan??", "cat clothes", "fellowship deadline") | Real voice, mid-ramble: "that guy from the maker thing… cat clothing, like, useful?…" |
+| 9–12s | The phone goes face down in a pocket. A finger presses the wrist device. Amber light | Silence, then a soft tick |
+| 12–20s | Clean screen: four fragments snap into four neat cards (Proposal · drafted, Cat clothing · saved, Reel · Sunday, Fellowship · on calendar) | "It keeps the mess. It gives you back the meaning." |
+| 20–23s | One card: "Send proposal to Rohan?" A thumb taps *Send it* | "It asks before anything leaves your hands." |
+| 23–25s | The founder looks up at the sky. End card with the Focus mark | "Unobvious. You think. It handles the rest." |
+
+**The meta-joke:** the reel inside the demo note is this reel. "There's a reel in this somewhere, about how messy my head is." Lean into it in the caption: *"I told it to make me film this. It did."* Only use that caption if it's true by the time it's posted.
+
+---
+
+## 7. Risks
 
 - **Over-promising:** the story shows a working system; today it's a private alpha. The "Simulated example" label and "How it works" framing are mandatory.
 - **Looking like Humane:** if the device dominates the frame for more than Acts 1 and 5, the story drifts back to gadget-worship.

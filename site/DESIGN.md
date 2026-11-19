@@ -21,6 +21,8 @@ Unobvious builds quiet technology. The identity rests on one optical idea:
 
 Every decision below comes from those two sentences. If something doesn't serve either, cut it.
 
+**And a third, from the showcase work:** *chaos in, clarity out.* A builder's head is messy, and the product takes the mess as it comes. Visually, chaos (scattered, blurred, overlapping, half-written) always resolves into clarity (gridded, sharp, labelled) within the same moment. See `SHOWCASE.md` §5.
+
 ### Where it came from
 
 These are the founder's references, and what each one gave us:
