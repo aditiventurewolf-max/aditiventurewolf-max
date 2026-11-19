@@ -1,0 +1,226 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unobvious Brand Identity</title>
+<meta name="description" content="The Unobvious brand identity: logo routes, the Focus mark, colour, type, light plates, imagery, motion, voice and applications.">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--night:#13181B;--deep:#003A6C;--moon:#F0EEEB;--fog:#CCD5DA;--hot:#FFBF65;--hot2:#FD8973;--ember:#E8590C;--sans:'Inter Tight',Inter,system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--gut:clamp(20px,4.5vw,64px);--hair:rgba(240,238,235,.14)}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--night);color:var(--moon);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}img,svg{display:block}
+.m{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:color-mix(in srgb,currentColor 70%,transparent);line-height:1.6}
+h1{font-weight:500;font-size:clamp(48px,8vw,128px);line-height:.9;letter-spacing:-.05em}
+h2{font-weight:500;font-size:clamp(32px,4.4vw,64px);line-height:1;letter-spacing:-.04em;margin-top:14px;max-width:15em}
+h3{font-weight:500;font-size:24px;letter-spacing:-.025em}
+p.l{max-width:56ch;margin-top:18px;color:color-mix(in srgb,currentColor 80%,transparent)}
+section{padding:clamp(80px,10vw,140px) var(--gut);border-top:1px solid var(--hair);position:relative}
+.w{max-width:1280px;margin:0 auto}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.16;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:20px;padding:16px var(--gut);background:color-mix(in srgb,var(--night) 80%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--hair)}
+.top nav{margin-left:auto;display:flex;gap:18px;flex-wrap:wrap}.top nav a{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;opacity:.75}.top nav a:hover{opacity:1}
+@media(max-width:900px){.top nav{display:none}}
+/* cover */
+.cover{min-height:92svh;display:grid;place-items:center;text-align:center;overflow:hidden;border-top:0;background:url(assets/media/bg/halo.webp) center/cover}
+.cover .big{width:min(30vw,260px);margin:0 auto}
+.cover h1{margin-top:44px}.cover .m{margin-top:20px}
+/* routes */
+.routes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:48px}
+@media(max-width:1100px){.routes{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:640px){.routes{grid-template-columns:1fr 1fr}}
+.route{background:#1A2024;border:1px solid var(--hair);padding:20px;display:flex;flex-direction:column;gap:14px;position:relative}
+.route .art{aspect-ratio:1;display:grid;place-items:center;background:var(--night)}
+.route .art svg{width:58%;height:auto}.route p{font-size:14px;color:color-mix(in srgb,var(--moon) 75%,transparent)}
+.route.pick{border-color:var(--hot)}.route .tag{position:absolute;top:12px;right:12px;background:var(--hot);color:var(--night);font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:4px 8px}
+.wm{font-family:var(--sans);font-weight:600;font-size:clamp(20px,2vw,30px);letter-spacing:-.035em}.wm .soft{filter:blur(2.2px)}
+/* logo system */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:48px}@media(max-width:800px){.grid2{grid-template-columns:1fr}}
+.panel{padding:48px 32px;display:grid;place-items:center;min-height:260px;position:relative}
+.panel .m{position:absolute;left:16px;top:14px}
+.p-night{background:var(--night);border:1px solid var(--hair)}.p-moon{background:var(--moon);color:var(--night)}.p-hot{background:var(--hot);color:var(--night)}.p-plate{background:url(assets/media/bg/amber-horizon.webp) center/cover}
+.lock{display:flex;align-items:center;gap:16px}.lock svg{width:56px;height:56px}.lock span{font-weight:600;font-size:40px;letter-spacing:-.04em}
+.stack{display:flex;flex-direction:column;align-items:center;gap:14px}.stack svg{width:72px;height:72px}.stack span{font-weight:600;font-size:30px;letter-spacing:-.035em}
+.clear{position:relative;padding:36px;border:1px dashed rgba(255,191,101,.6)}.clear::after{content:"x = dot diameter";position:absolute;bottom:-26px;left:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--hot)}
+.sizes{display:flex;align-items:flex-end;gap:28px}.sizes div{text-align:center}.sizes .m{position:static;margin-top:10px}
+.donts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:12px}@media(max-width:800px){.donts{grid-template-columns:1fr 1fr}}
+.dont{background:#1A2024;border:1px solid var(--hair);padding:24px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;font-size:14px}
+.dont svg{width:64px;height:64px}.dont b{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--hot2);font-weight:500}
+/* colour */
+.sw{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:48px}@media(max-width:1000px){.sw{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:560px){.sw{grid-template-columns:1fr 1fr}}
+.s{min-height:260px;padding:16px;display:flex;flex-direction:column;justify-content:space-between}
+.s h3{font-size:20px}.s .hex{font-family:var(--mono);font-size:13px}.s .role{font-size:13px;margin-top:6px;opacity:.85}
+.alt{display:flex;gap:6px;margin-top:20px;align-items:center;flex-wrap:wrap}.alt i{width:40px;height:40px;display:block}
+/* type */
+.type{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,6vw,96px);margin-top:48px}@media(max-width:900px){.type{grid-template-columns:1fr}}
+.spec{border-top:1px solid var(--hair)}.spec div{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--hair)}
+.spec dt{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}.spec dd{text-align:right}
+.specimen .d1{font-weight:500;font-size:clamp(56px,7vw,104px);line-height:.92;letter-spacing:-.05em}
+.specimen .d2{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-top:24px;color:var(--hot)}
+/* plates */
+.plates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:48px}@media(max-width:900px){.plates{grid-template-columns:1fr 1fr}}
+.plates figure{margin:0}.plates img{width:100%;aspect-ratio:16/10;object-fit:cover}.plates figcaption{margin-top:10px}
+/* imagery + motion + voice */
+.rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:48px}@media(max-width:900px){.rules{grid-template-columns:1fr}}
+.rules div{border-top:1px solid var(--hair);padding-top:18px}.rules p{margin-top:10px;font-size:15px;color:color-mix(in srgb,var(--moon) 78%,transparent)}
+.focusdemo{position:relative;margin-top:48px;aspect-ratio:21/9;overflow:hidden;background:url(assets/media/bg/amber-window.webp) center/cover}
+.focusdemo img{position:absolute;height:120%;left:58%;top:-6%;transform:translateX(-50%)}
+.focusdemo .b{filter:blur(16px) brightness(.8)}.focusdemo .s2{clip-path:inset(26% 26% 38% 22%)}
+.focusdemo .fr{position:absolute;left:calc(58% - 13%);top:25%;width:16%;height:41%;border:1px solid var(--moon)}
+.focusdemo .cap{position:absolute;left:24px;bottom:20px;max-width:30ch;font-size:clamp(18px,2vw,28px);letter-spacing:-.03em;line-height:1.1}
+.voice{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:48px}@media(max-width:800px){.voice{grid-template-columns:1fr}}
+.voice div{padding:28px;border:1px solid var(--hair)}.voice ul{list-style:none;margin-top:14px}.voice li{padding:10px 0;border-top:1px solid var(--hair);font-size:16px}
+.voice .yes{background:rgba(255,191,101,.06)}.voice .no li{text-decoration:line-through;text-decoration-color:var(--hot2);opacity:.75}
+/* applications */
+.apps{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px;margin-top:48px}
+.app-icon{grid-column:span 3;display:grid;place-items:center;background:var(--moon);aspect-ratio:1}
+.app-icon .ic{width:46%;aspect-ratio:1;border-radius:22.5%;background:url(assets/media/bg/halo.webp) center/180%;display:grid;place-items:center;box-shadow:0 20px 40px rgba(19,24,27,.3)}.app-icon .ic svg{width:62%}
+.card{grid-column:span 5;display:grid;gap:12px}
+.bc{aspect-ratio:85/55;padding:22px;display:flex;flex-direction:column;justify-content:space-between}
+.bc.f{background:url(assets/media/bg/amber-eclipse.webp) center/cover;color:var(--moon)}.bc.b{background:var(--moon);color:var(--night)}
+.bc .name{font-weight:600;font-size:22px;letter-spacing:-.03em}.bc .m{color:inherit;opacity:.8}
+.post{grid-column:span 4;aspect-ratio:4/5;position:relative;overflow:hidden;background:url(assets/media/bg/amber-wave.webp) center/cover;padding:24px;display:flex;flex-direction:column;justify-content:space-between}
+.post .q{font-weight:500;font-size:clamp(24px,2.6vw,40px);line-height:1;letter-spacing:-.04em}
+@media(max-width:1000px){.app-icon,.card,.post{grid-column:span 6}}@media(max-width:600px){.app-icon,.card,.post{grid-column:span 12}}
+.web{grid-column:span 12;aspect-ratio:21/8;position:relative;overflow:hidden;background:url(assets/media/bg/amber-horizon.webp) center/cover;padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+.web .bar{display:flex;align-items:center;gap:12px}.web .bar svg{width:24px;height:24px}.web .bar span{font-weight:600;letter-spacing:-.02em}
+.web .t{font-weight:500;font-size:clamp(30px,5vw,80px);line-height:.92;letter-spacing:-.05em;max-width:10em}
+footer{padding:48px var(--gut);border-top:1px solid var(--hair);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:600px){.panel{padding:44px 16px 28px;min-width:0}.lock{gap:10px}.lock svg{width:36px;height:36px}.lock span{font-size:26px}.sizes{gap:14px}.grid2>*{min-width:0}}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+ <symbol id="focus" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square"><path d="M8 22V8h14M42 8h14v14M56 42v14H42M22 56H8V42"/></g><circle cx="32" cy="32" r="9" fill="var(--dot,#FFBF65)"/></symbol>
+ <symbol id="halo" viewBox="0 0 64 64"><circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="35" cy="29" r="10" fill="var(--dot,#FFBF65)"/></symbol>
+ <symbol id="lookup" viewBox="0 0 64 64"><circle cx="32" cy="22" r="10" fill="var(--dot,#FFBF65)"/><path d="M8 44h48" stroke="currentColor" stroke-width="4"/><path d="M18 52h28" stroke="currentColor" stroke-width="4" opacity=".45"/></symbol>
+ <symbol id="press" viewBox="0 0 64 64"><rect x="8" y="10" width="48" height="44" rx="14" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="32" cy="34" r="11" fill="currentColor"/><circle cx="44" cy="20" r="3" fill="var(--dot,#FFBF65)"/></symbol>
+</defs></svg>
+
+<header class="top"><svg width="26" height="26"><use href="#focus"/></svg><strong style="font-weight:600;letter-spacing:-.02em">Unobvious</strong><span class="m">Brand identity · v1</span>
+ <nav><a href="#routes">Logo routes</a><a href="#mark">The mark</a><a href="#colour">Colour</a><a href="#type">Type</a><a href="#light">Light</a><a href="#imagery">Imagery</a><a href="#voice">Voice</a><a href="#apps">Applications</a></nav></header>
+
+<section class="cover"><div class="grain"></div><div>
+ <svg class="big" viewBox="0 0 64 64"><use href="#focus"/></svg>
+ <h1>Unobvious</h1><p class="m">Everything else can blur · Brand identity v1 · Bengaluru</p>
+</div></section>
+
+<section id="idea"><div class="w">
+ <p class="m">01 · The idea</p><h2>Keep what matters in focus. Let everything else blur.</h2>
+ <p class="l">Unobvious builds quiet technology. The identity is built on one optical idea: a sharp frame inside soft focus, and one warm light in a dark room. The frame is the product's job, sorting the noise of a day down to what matters. The light is the press: one button, one moment of attention, then you look up.</p>
+</div></section>
+
+<section id="routes"><div class="w">
+ <p class="m">02 · Logo routes</p><h2>Five directions we explored.</h2>
+ <p class="l">Each one comes from the product, not from a template. We recommend Focus: it explains the company in a shape, holds up at 16 pixels, and doubles as the interface's own focus frame.</p>
+ <div class="routes">
+  <div class="route pick"><span class="tag">Recommended</span><div class="art"><svg viewBox="0 0 64 64" style="color:var(--moon)"><use href="#focus"/></svg></div><h3>Focus</h3><p>Four corner brackets around one warm dot. The frame keeps what matters; the dot is the press.</p></div>
+  <div class="route"><div class="art"><svg viewBox="0 0 64 64" style="color:var(--moon)"><use href="#halo"/></svg></div><h3>Halo</h3><p>A light slightly off-centre inside a ring, like an eclipse. Atmospheric, softer, less literal.</p></div>
+  <div class="route"><div class="art"><span class="wm">Unobvi<span class="soft">o</span>us</span></div><h3>Soft o</h3><p>A pure wordmark where one letter sits out of focus. Unobvious, quite literally. Wordmark only, no symbol.</p></div>
+  <div class="route"><div class="art"><svg viewBox="0 0 64 64" style="color:var(--moon)"><use href="#lookup"/></svg></div><h3>Look up</h3><p>A light rising over a horizon. The promise of the product: put the phone down, look up.</p></div>
+  <div class="route"><div class="art"><svg viewBox="0 0 64 64" style="color:var(--moon)"><use href="#press"/></svg></div><h3>The press</h3><p>The device itself as an icon: one body, one button, one status light. Most product-specific, least flexible.</p></div>
+ </div>
+</div></section>
+
+<section id="mark"><div class="w">
+ <p class="m">03 · The mark</p><h2>Focus, in every setting.</h2>
+ <div class="grid2">
+  <div class="panel p-night"><span class="m">Primary · on night</span><div class="lock"><svg viewBox="0 0 64 64" style="color:var(--moon)"><use href="#focus"/></svg><span>Unobvious</span></div></div>
+  <div class="panel p-moon"><span class="m">On moonlight · ember dot</span><div class="lock" style="--dot:var(--ember)"><svg viewBox="0 0 64 64" style="color:var(--night);--dot:#E8590C"><use href="#focus"/></svg><span>Unobvious</span></div></div>
+  <div class="panel p-plate"><span class="m">On a light plate</span><div class="stack"><svg viewBox="0 0 64 64" style="color:var(--moon)"><use href="#focus"/></svg><span>Unobvious</span></div></div>
+  <div class="panel p-hot"><span class="m">One colour · on amber</span><div class="lock"><svg viewBox="0 0 64 64" style="color:var(--night);--dot:#13181B"><use href="#focus"/></svg><span>Unobvious</span></div></div>
+  <div class="panel p-night"><span class="m">Clear space</span><div class="clear"><div class="lock"><svg viewBox="0 0 64 64" style="color:var(--moon)"><use href="#focus"/></svg><span>Unobvious</span></div></div></div>
+  <div class="panel p-night"><span class="m">Sizes · mark stays crisp to 16 px</span><div class="sizes">
+   <div><svg width="96" height="96" style="color:var(--moon)"><use href="#focus"/></svg><p class="m">96</p></div>
+   <div><svg width="48" height="48" style="color:var(--moon)"><use href="#focus"/></svg><p class="m">48</p></div>
+   <div><svg width="24" height="24" style="color:var(--moon)"><use href="#focus"/></svg><p class="m">24</p></div>
+   <div><svg width="16" height="16" style="color:var(--moon)"><use href="#focus"/></svg><p class="m">16</p></div></div></div>
+ </div>
+ <div class="donts">
+  <div class="dont"><svg viewBox="0 0 64 64" style="color:var(--moon);filter:blur(2px)"><use href="#focus"/></svg><b>Don’t blur the mark</b>Blur is for the world around it. The mark is always sharp.</div>
+  <div class="dont"><svg viewBox="0 0 64 64" style="color:#7C97FF;--dot:#7C97FF"><use href="#focus"/></svg><b>Don’t recolour</b>Moonlight or night for the frame. The dot is amber, ember or the frame colour.</div>
+  <div class="dont"><svg viewBox="0 0 64 64" style="color:var(--moon);transform:rotate(18deg)"><use href="#focus"/></svg><b>Don’t rotate</b>The frame is level, like a viewfinder.</div>
+  <div class="dont"><svg viewBox="0 0 64 64" style="color:var(--moon)"><use href="#focus"/><circle cx="32" cy="32" r="9" fill="none" stroke="#FD8973" stroke-width="3"/><circle cx="20" cy="44" r="5" fill="#FD8973"/></svg><b>Don’t add dots</b>There is one press. One dot.</div>
+ </div>
+</div></section>
+
+<section id="colour"><div class="w">
+ <p class="m">04 · Colour · Midnight Amber</p><h2>One warm light in a dark room.</h2>
+ <p class="l">Night carries most surfaces, Moonlight carries text and calm pages, Amber is the light. Coral and Atlantic are for atmosphere in plates and gradients, never for body text. Contrast figures are text on that colour, measured.</p>
+ <div class="sw">
+  <div class="s" style="background:#13181B;border:1px solid var(--hair)"><span class="m" data-cr="#F0EEEB">—</span><div><h3>Night</h3><p class="hex">#13181B</p><p class="role">Primary ground</p></div></div>
+  <div class="s" style="background:#F0EEEB;color:#13181B"><span class="m" data-cr="#13181B">—</span><div><h3>Moonlight</h3><p class="hex">#F0EEEB</p><p class="role">Text on night, light pages</p></div></div>
+  <div class="s" style="background:#FFBF65;color:#13181B"><span class="m" data-cr="#13181B">—</span><div><h3>Amber</h3><p class="hex">#FFBF65</p><p class="role">The light. Primary action</p></div></div>
+  <div class="s" style="background:#FD8973;color:#13181B"><span class="m" data-cr="#13181B">—</span><div><h3>Coral</h3><p class="hex">#FD8973</p><p class="role">Warmth in plates</p></div></div>
+  <div class="s" style="background:#003A6C"><span class="m" data-cr="#F0EEEB">—</span><div><h3>Atlantic</h3><p class="hex">#003A6C</p><p class="role">Depth in plates</p></div></div>
+  <div class="s" style="background:#CCD5DA;color:#13181B"><span class="m" data-cr="#13181B">—</span><div><h3>Fog</h3><p class="hex">#CCD5DA</p><p class="role">Quiet surfaces</p></div></div>
+ </div>
+ <div class="alt"><span class="m">Alternate · Cinema</span><i style="background:#151515;border:1px solid var(--hair)"></i><i style="background:#EDE1D3"></i><i style="background:#EE2324"></i><i style="background:#AA1F23"></i><span class="m">For campaigns and launches, not the everyday site</span></div>
+</div></section>
+
+<section id="type"><div class="w">
+ <p class="m">05 · Type</p><h2>A quiet grotesk and a technical whisper.</h2>
+ <div class="type">
+  <div class="specimen"><p class="d1">Everything else can blur.</p><p class="d2">Press once · Look up · 12.97° N 77.59° E</p>
+   <p class="l">Inter Tight carries every headline and sentence, set tight and medium weight. JetBrains Mono, small, uppercase and widely spaced, labels the world: coordinates, times, figure numbers, states. Instrument Serif may appear once per page, in italic, as a human aside.</p></div>
+  <dl class="spec">
+   <div><dt>Display</dt><dd>Inter Tight 500 · −0.045em · 0.92</dd></div>
+   <div><dt>Heading</dt><dd>Inter Tight 500 · −0.04em · 1.0</dd></div>
+   <div><dt>Body</dt><dd>Inter Tight 400 · 17px · 1.55</dd></div>
+   <div><dt>Label</dt><dd>JetBrains Mono 500 · 11px · +0.14em · caps</dd></div>
+   <div><dt>Aside</dt><dd>Instrument Serif italic · sparingly</dd></div>
+   <div><dt>Wordmark</dt><dd>Inter Tight 600 · −0.04em</dd></div>
+  </dl>
+ </div>
+</div></section>
+
+<section id="light"><div class="w">
+ <p class="m">06 · Light plates</p><h2>Backgrounds are light, not decoration.</h2>
+ <p class="l">Generated, grainy, soft-focus light fields in the palette. Each plate is a few large light sources on Night with film grain, made by a script so they stay consistent and ours. One plate per section, never two side by side.</p>
+ <div class="plates">
+  <figure><img src="assets/media/bg/halo.webp" alt="Halo plate: an amber ring of light around a dark centre"><figcaption class="m">Halo · behind the product</figcaption></figure>
+  <figure><img src="assets/media/bg/amber-horizon.webp" alt="Horizon plate: blue above, amber and coral rising from below"><figcaption class="m">Horizon · openings and closes</figcaption></figure>
+  <figure><img src="assets/media/bg/amber-wave.webp" alt="Wave plate: a diagonal band of amber light"><figcaption class="m">Wave · motion</figcaption></figure>
+  <figure><img src="assets/media/bg/amber-window.webp" alt="Window plate: vertical bars of blue and amber, like light through a window"><figcaption class="m">Window · interiors, the day</figcaption></figure>
+  <figure><img src="assets/media/bg/amber-eclipse.webp" alt="Eclipse plate: an off-centre ring of amber light"><figcaption class="m">Eclipse · section backdrops</figcaption></figure>
+  <figure><img src="assets/media/bg/paper-glow.webp" alt="Paper plate: moonlight with a soft coral glow in one corner"><figcaption class="m">Paper glow · light pages</figcaption></figure>
+  <figure><img src="assets/media/bg/cinema-veil.webp" alt="Cinema plate: deep red with a bright red vertical bar"><figcaption class="m">Cinema veil · campaigns</figcaption></figure>
+  <figure><img src="assets/media/bg/halo-cinema.webp" alt="Cinema halo plate: a red ring of light"><figcaption class="m">Cinema halo · campaigns</figcaption></figure>
+ </div>
+</div></section>
+
+<section id="imagery"><div class="w">
+ <p class="m">07 · Imagery and motion</p><h2>One sharp thing. The rest, soft.</h2>
+ <div class="focusdemo"><img class="b" src="assets/media/device-hero.webp" alt=""><img class="s2" src="assets/media/device-hero.webp" alt="The Unobvious device, sharp inside a focus frame"><div class="fr"></div><p class="cap">The focus frame: everything in it is sharp, everything outside it is allowed to blur.</p></div>
+ <div class="rules">
+  <div><h3>Soft focus, real grain</h3><p>Photograph people and places slightly out of focus, with film grain. Faces are never the point; the moment is.</p></div>
+  <div><h3>One warm light</h3><p>Every image has a single warm source: a window, a lamp, the status light. Never more than one.</p></div>
+  <div><h3>A sharp frame</h3><p>When something matters, frame it. Brackets, not boxes. Only the framed thing is sharp.</p></div>
+  <div><h3>Motion is focus</h3><p>Things come into focus as they arrive and blur as they leave. Slow eases, nothing bounces.</p></div>
+  <div><h3>Scroll is a camera</h3><p>On the web, scrolling moves the camera: toward the button, through the noise, into the light.</p></div>
+  <div><h3>Still when asked</h3><p>With reduced motion, every page is complete and still. Motion is never the only way to understand something.</p></div>
+ </div>
+</div></section>
+
+<section id="voice"><div class="w">
+ <p class="m">08 · Voice</p><h2>Calm, plain, and on your side.</h2>
+ <p class="l">We write like a thoughtful friend, not a product. Short sentences. Ordinary words. We say what happens, and we say what we will not do.</p>
+ <div class="voice">
+  <div class="yes"><p class="m">We say</p><ul><li>It asks before it acts.</li><li>Press once, then look up.</li><li>Your rest is protected.</li><li>We never sell your data.</li><li>Small on purpose.</li></ul></div>
+  <div class="no"><p class="m">We don’t say</p><ul><li>Unleash your productivity</li><li>Revolutionary AI-powered assistant</li><li>Never miss a thing</li><li>10x your day</li><li>Join thousands of users</li></ul></div>
+ </div>
+</div></section>
+
+<section id="apps"><div class="w">
+ <p class="m">09 · Applications</p><h2>How it shows up.</h2>
+ <div class="apps">
+  <div class="app-icon"><div class="ic"><svg viewBox="0 0 64 64" style="color:var(--moon)"><use href="#focus"/></svg></div></div>
+  <div class="card"><div class="bc f"><svg width="34" height="34" style="color:var(--moon)"><use href="#focus"/></svg><div><p class="name">Aditi</p><p class="m">Founder · Unobvious</p></div></div>
+   <div class="bc b"><div class="m">contact@unobvious.in</div><div><p class="name" style="display:flex;gap:10px;align-items:center"><svg width="26" height="26" style="color:var(--night);--dot:#E8590C"><use href="#focus"/></svg>Unobvious</p><p class="m">Bengaluru · 12.97° N 77.59° E</p></div></div></div>
+  <div class="post"><span class="m">Unobvious · Lab notes</span><p class="q">Thoughts are loud. Keep three.</p><div style="display:flex;justify-content:space-between;align-items:end"><svg width="30" height="30" style="color:var(--moon)"><use href="#focus"/></svg><span class="m">Experiment 001</span></div></div>
+  <div class="web"><div class="bar"><svg style="color:var(--moon)"><use href="#focus"/></svg><span>Unobvious</span><span class="m" style="margin-left:auto">Website header</span></div><p class="t">Everything else can blur.</p></div>
+ </div>
+</div></section>
+
+<footer><span class="m">Unobvious · Brand identity v1 · Avaia Innovations (OPC) Private Limited</span><span class="m">Files · assets/brand · DESIGN.md</span></footer>
+<script>
+(function(){function hex(h){h=h.replace('#','');return [0,2,4].map(function(i){return parseInt(h.substr(i,2),16)})}
+function lum(c){return c.map(function(v){v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)}).reduce(function(a,v,i){return a+v*[.2126,.7152,.0722][i]},0)}
+document.querySelectorAll('[data-cr]').forEach(function(el){var bg=getComputedStyle(el.closest('.s')).backgroundColor.match(/\d+/g).slice(0,3).map(Number),fg=hex(el.dataset.cr);var a=lum(bg),b=lum(fg),r=(Math.max(a,b)+.05)/(Math.min(a,b)+.05);el.textContent='◐ '+r.toFixed(2)+':1'})})();
+</script>
+</body></html>
