@@ -1,85 +1,58 @@
+"""Builds the Unobvious site from src/ into the site root. Run: python3 src/build.py
+Every page shares one head, nav and footer. See DESIGN.md and SHOWCASE.md."""
 import pathlib,re
 S=pathlib.Path(__file__).parent;OUT=S.parent
 DOMAIN="unobvious.in"
 CONTACT_LOCAL="contact"          # one alias: create contact@unobvious.in before launch
-PROTOTYPE=True                   # shows the "Home 1 2 3" switcher; set False for launch
-WARN=set()
 rd=lambda n:(S/n).read_text()
-def todo(t):
-    WARN.add(t);return f'<mark class="todo">{t}</mark>'
-def email():
-    return f"{CONTACT_LOCAL}@{DOMAIN}" if DOMAIN else todo(f"{CONTACT_LOCAL}@your-domain")
-def join_href():
-    return f"mailto:{CONTACT_LOCAL}@{DOMAIN}?subject=Early%20access" if DOMAIN else "about.html"
+def email():return f"{CONTACT_LOCAL}@{DOMAIN}"
+def join_href():return f"mailto:{CONTACT_LOCAL}@{DOMAIN}?subject=Early%20access"
 NAV=[('index.html','Lab'),('os.html','Unobvious OS'),('about.html','About')]
-def head(title,desc,cls,live=False):
-    nav=''.join(f'<a data-page="{h}" href="{h}">{l}</a>' for h,l in NAV)
-    LIVE=';if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.className+=" live"' if live else ''
-    right=f'<a class="pill" href="{join_href()}">Join the alpha</a>' if 'p-serene' in cls else f'<a href="{join_href()}">Contact</a>'
+MARK='<svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="square"><path d="M8 22V8h14M42 8h14v14M56 42v14H42M22 56H8V42"/></g><circle cx="32" cy="32" r="9" fill="#FFBF65"/></svg>'
+
+def head(title,desc,css,live):
+    links=''.join(f'<li><a href="{h}">{l}</a></li>' for h,l in NAV)
+    styles=''.join(f'<link rel="stylesheet" href="assets/{c}">' for c in ['site.css']+css)
+    flag='document.documentElement.classList.add("js");if(!matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("mo")'+(';document.documentElement.classList.add("live")' if live else '')+'}'
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>{title}</title><meta name="description" content="{desc}"><meta name="theme-color" content="#F6F4EF">
+<title>{title}</title><meta name="description" content="{desc}"><meta name="theme-color" content="#13181B">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/ui.css"><script>document.documentElement.className+=" js"{LIVE}</script></head><body class="{cls}">
-<header class="hdr" id="hdr"><div class="bar"><a class="brand" href="index.html">Unobvious</a>
-<nav class="nav" id="nav" aria-label="Main">{nav}<a class="only-m" href="{join_href()}">Contact</a></nav>
-<div class="right">{right}</div>
-<button class="burger" type="button" aria-expanded="false" aria-controls="nav">Menu</button></div></header>'''
-def variants(cur):
-    if not PROTOTYPE:return ''
-    items=[('index.html','1'),('home-2.html','2'),('home-3.html','3'),('home-4.html','4'),('home-5.html','5'),('home-6.html','6'),('home-7.html','7')]
-    links=''.join(f'<a href="{h}"'+(' aria-current="page"' if h==cur else '')+f'>{n}</a>' for h,n in items)
-    return f'<div class="variants" role="navigation" aria-label="Home variations"><span>Home</span>{links}</div>'
-def foot(cur,show_variants,extra_js=''):
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+{styles}<script>{flag}</script></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><a class="brand" href="index.html" aria-label="Unobvious, home">{MARK}Unobvious</a>
+<nav aria-label="Main"><ul id="menu">{links}</ul></nav>
+<a class="pill pill-hot pill-sm" href="{join_href()}">Early access</a>
+<button class="burger" type="button" aria-expanded="false" aria-controls="menu">Menu</button></header>'''
+
+def foot(js):
     items=NAV+[('privacy.html','Privacy'),('terms.html','Terms'),(join_href(),'Contact')]
-    links=''.join(f'<li><a href="{h}"'+(' aria-current="page"' if h==cur else '')+f'>{l}</a></li>' for h,l in items)
-    mark='<svg class="f-mark" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10.25" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>'
-    loop=['Press','Speak','Sort','Ask first','Look up']
-    run=''.join(f'<span>{w}</span><i></i>' for w in loop)
-    return f'''<footer class="site-foot">
-<div class="f-ticker" aria-hidden="true"><div class="f-ticker-track">{run*4}</div></div>
-<div class="f-sign"><canvas class="f-dots" aria-hidden="true"></canvas>
-<p class="f-hint"><span class="h-fine">Move across it. Press anywhere.</span><span class="h-touch">Tap anywhere.</span></p>
-<a class="f-top" href="#"><span class="f-top-ic" aria-hidden="true">↑</span>Back to top</a></div>
-<dl class="f-facts">
-<div><dt>Local time</dt><dd data-clock>Bengaluru</dd></div>
-<div><dt>Coordinates</dt><dd>12.97° N, 77.59° E</dd></div>
-<div><dt>Now</dt><dd><span class="f-pulse" aria-hidden="true"></span><span>Experiment 001, private alpha</span></dd></div>
-<div><dt>Write to us</dt><dd class="f-mail"><span class="f-addr">{email()}</span><button type="button" class="f-copy-btn">Copy</button><span class="f-copied visually-hidden" aria-live="polite"></span></dd></div>
-</dl>
-<div class="f-stack">
-<a class="f-brand" href="index.html" aria-label="Unobvious, home">{mark}<span>Unobvious</span></a>
-<p class="f-tag">An independent lab in Bengaluru, working on technology that gives people their attention back.</p>
-<nav aria-label="Footer"><ul class="f-links">{links}</ul></nav>
-<p class="f-copy">© 2026 Avaia Innovations (OPC) Private Limited</p>
-</div></footer>
-{variants(cur) if show_variants else ''}<script src="assets/triage.js"></script><script src="assets/ui.js"></script><script src="assets/footer.js"></script>{extra_js}</body></html>'''
-def build(src,out,title,desc,cls='',show_variants=False,live=False,extra_js=''):
-    body=rd(src)
-    for k in('triage','cta'):
-        body=body.replace('{{'+k+'}}',rd(k+'.part'))
-    body=body.replace('{{JOIN}}',join_href()).replace('{{SITE}}',f"https://www.{DOMAIN}" if DOMAIN else todo("your-domain"))
+    links=''.join(f'<li><a href="{h}">{l}</a></li>' for h,l in items)
+    scripts=''.join(f'<script src="assets/{j}"></script>' for j in js+['site.js'])
+    return f'''<footer class="dark" style="padding:0 var(--gut)"><div class="wrap">
+<div class="foot"><div><a class="brand" href="index.html">{MARK}Unobvious</a><p>An independent lab in Bengaluru. Quiet technology that takes the mess in your head and gives you back the meaning.</p></div>
+<nav aria-label="Footer"><ul>{links}</ul></nav></div>
+<div class="strip m"><span>© 2026 Avaia Innovations (OPC) Private Limited</span><span>Bengaluru · 12.97° N 77.59° E</span><a class="top" href="#">Back to top ↑</a></div>
+</div><p class="bigword" aria-hidden="true">Unobvious</p></footer>
+{scripts}</body></html>'''
+
+def build(src,out,title,desc,css=(),js=(),live=False):
+    body=rd(src).replace('{{close}}',rd('close.part'))
+    body=body.replace('{{JOIN}}',join_href()).replace('{{SITE}}',f"https://www.{DOMAIN}")
     body=re.sub(r'\{\{EMAIL(?::\w+)?\}\}',lambda m:email(),body)
-    (OUT/out).write_text(head(title,desc,cls,live)+body+foot(out,show_variants,extra_js))
-T='Unobvious · A lab for making everyday life simpler'
-D='Unobvious is an independent lab in Bengaluru building quiet technology that gives people their attention back.'
-build('home1.html','index.html',T,D,'p-home',True)
-build('home2.html','home-2.html',T,D,'p-home',True)
-build('home3.html','home-3.html',T,D,'p-home',True)
-build('home5.html','home-5.html',T,D,'p-home p-serene',True)
-build('home4.html','home-4.html',T,D,'p-home',True,live=True,extra_js='<script src="assets/story.js"></script>')
-build('os.html','os.html','Unobvious OS · An assistant you never look at','Press a button, say what is on your mind, and put your phone away. Unobvious OS sorts it and asks before it acts.')
-build('about.html','about.html','About · Unobvious','Unobvious is an independent lab in Bengaluru, run by Aditi, building technology that gives people their attention back.')
+    page=head(title,desc,list(css),live)+body+foot(list(js))
+    page=page.replace('class="close dark"','class="close dark"')
+    (OUT/out).write_text(page)
+
+build('home.html','index.html','Unobvious · You think. It handles the rest.',
+      'Unobvious is a lab in Bengaluru. Its first experiment, Unobvious OS, is a quiet system behind one button: say it messy, and it sorts it, gets it done, and asks first.',
+      css=['showcase.css'],js=['showcase.js'],live=True)
+build('os.html','os.html','Unobvious OS · An assistant you talk to, not look at',
+      'Press once, say what is on your mind, however messy, and put your phone away. Unobvious OS sorts it and asks before anything leaves your hands.')
+build('about.html','about.html','About · Unobvious','Unobvious is an independent lab in Bengaluru, run by Aditi, building quiet technology for the people the giants won’t build for.')
 build('privacy.html','privacy.html','Privacy Policy · Unobvious','How Unobvious collects, uses and protects personal data.')
 build('terms.html','terms.html','Terms of Service · Unobvious','Terms for using Unobvious services.')
-
-# Home 6 is a standalone page with its own type, nav and close (poster style)
-def build_standalone(src,out):
-    body=rd(src).replace('{{JOIN}}',join_href())
-    body=re.sub(r'\{\{EMAIL(?::\w+)?\}\}',lambda m:email(),body)
-    body=body.replace('{{VARIANTS}}',variants(out))
-    (OUT/out).write_text(body)
-build_standalone('home6.html','home-6.html')
-build_standalone('home7.html','home-7.html')
+build('404.html','404.html','Lost in the mess · Unobvious','This page could not be found.')
 (OUT/'brand.html').write_text(rd('brand.html'))
-if WARN:print('TODO before launch:',', '.join(sorted(WARN)))
+print('built: index, os, about, privacy, terms, 404, brand')

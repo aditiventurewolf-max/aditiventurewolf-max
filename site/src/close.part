@@ -1,0 +1,7 @@
+<section class="close dark" aria-labelledby="close-h">
+  <div class="plate" style="background-image:url(assets/media/bg/amber-horizon.webp)" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
+  <div class="wrap close-row">
+    <div><h2 id="close-h" class="h2">Want an early look?</h2><p class="m">Private alpha · small on purpose · {{EMAIL}}</p></div>
+    <div class="ctas"><a class="pill pill-hot" href="{{JOIN}}">Ask for early access</a><a class="pill pill-line" href="about.html">About the lab</a></div>
+  </div>
+</section>

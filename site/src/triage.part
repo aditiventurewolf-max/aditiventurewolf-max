@@ -1,6 +1,0 @@
-<div class="triage">
-  <div><div class="mono">Pick a voice note</div><div class="chips" id="chips"></div><div class="mono">What you said</div><div class="transcript" id="transcript" aria-live="polite"></div></div>
-  <div><div class="mono">What it did</div><div id="tri-out" aria-live="polite" style="margin-top:8px"></div>
-    <div class="approve" id="approve"><p class="q"></p><button type="button">Approve</button></div></div>
-</div>
-<p class="caption note">A simulated preview with example notes. Nothing is sent anywhere.</p>

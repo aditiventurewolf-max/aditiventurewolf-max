@@ -1,69 +1,71 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Unobvious OS · An assistant you never look at</title><meta name="description" content="Press a button, say what is on your mind, and put your phone away. Unobvious OS sorts it and asks before it acts."><meta name="theme-color" content="#F6F4EF">
+<title>Unobvious OS · An assistant you talk to, not look at</title><meta name="description" content="Press once, say what is on your mind, however messy, and put your phone away. Unobvious OS sorts it and asks before anything leaves your hands."><meta name="theme-color" content="#13181B">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/ui.css"><script>document.documentElement.className+=" js"</script></head><body class="">
-<header class="hdr" id="hdr"><div class="bar"><a class="brand" href="index.html">Unobvious</a>
-<nav class="nav" id="nav" aria-label="Main"><a data-page="index.html" href="index.html">Lab</a><a data-page="os.html" href="os.html">Unobvious OS</a><a data-page="about.html" href="about.html">About</a><a class="only-m" href="mailto:contact@unobvious.in?subject=Early%20access">Contact</a></nav>
-<div class="right"><a href="mailto:contact@unobvious.in?subject=Early%20access">Contact</a></div>
-<button class="burger" type="button" aria-expanded="false" aria-controls="nav">Menu</button></div></header><main>
-<section class="page-hero">
-  <div class="wrap os-grid">
-    <div>
-      <h1 class="rise">An assistant you talk to, <em>not one you look at.</em></h1>
-      <p class="sub rise" style="--d:.15s">Press a button, say what is on your mind, and put your phone away. Unobvious OS sorts it, handles what it can, and checks with you before anything leaves your hands.</p>
-      <a class="btn primary rise" style="--d:.3s" href="mailto:contact@unobvious.in?subject=Early%20access">Ask for early access</a>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css"><script>document.documentElement.classList.add("js");if(!matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("mo")}</script></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><a class="brand" href="index.html" aria-label="Unobvious, home"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="square"><path d="M8 22V8h14M42 8h14v14M56 42v14H42M22 56H8V42"/></g><circle cx="32" cy="32" r="9" fill="#FFBF65"/></svg>Unobvious</a>
+<nav aria-label="Main"><ul id="menu"><li><a href="index.html">Lab</a></li><li><a href="os.html">Unobvious OS</a></li><li><a href="about.html">About</a></li></ul></nav>
+<a class="pill pill-hot pill-sm" href="mailto:contact@unobvious.in?subject=Early%20access">Early access</a>
+<button class="burger" type="button" aria-expanded="false" aria-controls="menu">Menu</button></header><main id="main">
+<section class="lens-hero dark" aria-labelledby="os-h1">
+  <div class="plate" style="background-image:url(assets/media/bg/amber-horizon.webp)" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
+  <div class="hero-text">
+    <p class="m">Experiment 001 · Private alpha</p>
+    <h1 id="os-h1" class="display" style="margin-top:18px">Unobvious OS</h1>
+    <p class="lede">An assistant you talk to, not one you look at. Press once, say what’s on your mind, however messy, and put your phone away. It sorts it, handles what it can, and asks before anything leaves your hands.</p>
+    <div class="ctas"><a class="pill pill-hot" href="mailto:contact@unobvious.in?subject=Early%20access">Ask for early access</a><a class="pill pill-line" href="#demo">Try a messy note</a></div>
+  </div>
+  <div class="lens" aria-hidden="true"><div class="halo"></div>
+    <img class="dev blur" src="assets/media/device-hero.webp" width="1310" height="1508" alt="">
+    <img class="dev sharp" src="assets/media/device-hero.webp" width="1310" height="1508" alt="">
+    <div class="frame"><i></i><i></i><i></i><i></i><b></b></div></div>
+</section>
+
+<section class="dark sec" id="demo" aria-labelledby="demo-h">
+  <div class="plate dim" style="background-image:url(assets/media/bg/amber-window.webp)" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="m">Try it</p><h2 id="demo-h" class="h2">Say it messy. It gives you back the meaning.</h2>
+    <p class="lede">Pick a note. Filler and all, it comes out as a few clear things, and only what reaches another person waits for you.</p>
+    <div class="demo">
+      <div><p class="m">Pick a note</p><div class="chips" role="group" aria-label="Example notes"></div><p class="m">What you said</p><p class="ramble" aria-live="polite"></p></div>
+      <div><p class="m">What it made of it</p><div class="results" aria-live="polite"></div></div>
     </div>
-    <div class="panel field-wrap rise" style="--d:.2s" data-say='[["Move my three o’clock to Thursday.","Done. I’ll ask before telling anyone."],["I’m running on empty today.","Afternoon cleared. Your rest is protected."],["Find me something good for my walk.","One essay, queued."]]'>
-      <canvas class="field" aria-hidden="true" data-ry=".4"></canvas><div class="scrim"></div><div class="grain"></div>
-      <div class="say-box"><p class="say" aria-live="polite"></p><p class="reply"></p></div>
+    <p class="m note">A simulated example. Nothing is sent anywhere.</p>
+  </div>
+</section>
+
+<section class="light sec" aria-labelledby="ask-h">
+  <div class="plate" style="background-image:url(assets/media/bg/paper-glow.webp)" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
+  <div class="wrap two">
+    <div class="rev"><p class="m">Trust</p><h2 id="ask-h" class="h2">It asks before it acts.</h2><p class="lede">It listens only while you press. It asks for the narrowest access each task needs, and never shows ads or sells your data.</p></div>
+    <div class="lists rev">
+      <div><h3 class="m">Does quietly</h3><ul><li>Sorts what you say</li><li>Saves ideas for later</li><li>Nudges you at the right time</li><li>Protects your rest</li></ul></div>
+      <div><h3 class="m">Waits for your tap</h3><ul><li>Messages and email</li><li>Shared calendar invites</li><li>Any purchase or payment</li></ul></div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="day">
+<section class="dark sec" aria-labelledby="day-h">
+  <div class="plate dim" style="background-image:url(assets/media/bg/amber-eclipse.webp)" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
   <div class="wrap">
-    <h2>Less looking down.</h2>
-    <div class="list">
-      <div class="item-row"><div class="k">Morning</div><div><h3>A 60-second spoken brief</h3><p>Your top three priorities, anything unusual about the day, and one piece worth reading on your walk.</p></div></div>
-      <div class="item-row"><div class="k">Midday</div><div><h3>Deep work stays quiet</h3><p>Non-urgent messages wait. Nothing buzzes unless it truly cannot.</p></div></div>
-      <div class="item-row"><div class="k">Evening</div><div><h3>The day ends cleanly</h3><p>It notes what moved forward, parks what did not, and silences everything that is not an emergency.</p></div></div>
-      <div class="item-row"><div class="k">On a foggy day</div><div><h3>Rest comes first</h3><p>Tell it you are running on empty. It moves what can wait and writes the polite note to reschedule.</p></div></div>
+    <p class="m">Through the day</p><h2 id="day-h" class="h2">Same button. Different light.</h2>
+    <div class="tiles">
+      <article class="tile t-morning settle" style="--sx:-30px;--sy:40px;--sr:-6deg"><p class="m cr" data-cr></p><h3>Morning</h3><p>A 60-second spoken brief. Three priorities, one thing worth reading.</p></article>
+      <article class="tile t-midday settle" style="--sx:20px;--sy:-30px;--sr:5deg;--sd:.08s"><p class="m cr" data-cr></p><h3>Midday</h3><p>Deep work stays quiet. Nothing buzzes unless it truly cannot.</p></article>
+      <article class="tile t-evening settle" style="--sx:-24px;--sy:50px;--sr:4deg;--sd:.16s"><p class="m cr" data-cr></p><h3>Evening</h3><p>What moved forward is noted. The rest is parked for tomorrow.</p></article>
+      <article class="tile t-fog settle" style="--sx:30px;--sy:-20px;--sr:-5deg;--sd:.24s"><p class="m cr" data-cr></p><h3>Foggy day</h3><p>Say you are running on empty. Rest comes first.</p></article>
     </div>
   </div>
 </section>
-
-<section class="sec" id="try" style="padding-top:0">
+<section class="dark sec" id="faq" aria-labelledby="faq-title"><div class="grain" aria-hidden="true"></div>
   <div class="wrap">
-    <h2>Say it messy. It sorts it.</h2>
-    <p class="lead">Every note becomes a thought, an idea or a decision. Ideas are kept without cluttering your to-do list. Decisions turn into action.</p>
-    <div class="triage">
-  <div><div class="mono">Pick a voice note</div><div class="chips" id="chips"></div><div class="mono">What you said</div><div class="transcript" id="transcript" aria-live="polite"></div></div>
-  <div><div class="mono">What it did</div><div id="tri-out" aria-live="polite" style="margin-top:8px"></div>
-    <div class="approve" id="approve"><p class="q"></p><button type="button">Approve</button></div></div>
-</div>
-<p class="caption note">A simulated preview with example notes. Nothing is sent anywhere.</p>
-
-  </div>
-</section>
-
-<section class="sec" style="padding-top:0">
-  <div class="wrap">
-    <h2>It asks before it acts.</h2>
-    <div class="cols2">
-      <div><h3>Does quietly</h3><ul><li>Sorting your notes</li><li>Saving ideas for later</li><li>Queueing something to read</li><li>Protecting your rest time</li></ul></div>
-      <div><h3>Waits for your tap</h3><ul><li>Sending a message or email</li><li>Changing a shared calendar invite</li><li>Any purchase or payment</li></ul></div>
-    </div>
-    <p class="caption" style="margin-top:48px;max-width:36em">Built on Google Cloud. It listens only when you press, and we never show ads or sell your data. <a class="link" href="privacy.html" style="font-size:14px">Privacy policy</a></p>
-  </div>
-</section>
-<section class="sec faq" id="faq" aria-labelledby="faq-title">
-  <div class="wrap">
-    <h2 class="faq-title" id="faq-title">Frequently asked questions</h2>
+    <p class="m" style="text-align:center">Questions</p><h2 class="h2" id="faq-title" style="text-align:center;margin:14px auto 0">Frequently asked.</h2>
     <div class="faq-list">
     <div class="faq-item">
       <h3 class="faq-q"><button type="button" id="faq-b1" aria-expanded="false" aria-controls="faq-p1"><svg class="faq-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.25"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.6 2.25c-.8.4-1.2.95-1.2 1.85"/><path d="M12 16.6v.01"/></svg><span class="faq-label">What is Unobvious OS?</span><svg class="faq-chev" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></h3>
-      <div class="faq-panel" id="faq-p1" role="region" aria-labelledby="faq-b1"><div class="faq-inner"><p>A voice-first assistant you talk to instead of look at. You press a button, say what is on your mind, and it sorts that into thoughts, ideas and decisions, then handles what it can in the background.</p><p>You can <a href="#try">try a simulated example</a> further up this page.</p></div></div>
+      <div class="faq-panel" id="faq-p1" role="region" aria-labelledby="faq-b1"><div class="faq-inner"><p>A voice-first assistant you talk to instead of look at. You press a button, say what is on your mind, and it sorts that into thoughts, ideas and decisions, then handles what it can in the background.</p><p>You can <a href="#demo">try a simulated example</a> further up this page.</p></div></div>
     </div>
     <div class="faq-item">
       <h3 class="faq-q"><button type="button" id="faq-b2" aria-expanded="false" aria-controls="faq-p2"><svg class="faq-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.25"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.6 2.25c-.8.4-1.2.95-1.2 1.85"/><path d="M12 16.6v.01"/></svg><span class="faq-label">Is it always listening?</span><svg class="faq-chev" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></h3>
@@ -92,28 +94,18 @@
     </div>
   </div>
 </section>
-<section class="final"><div class="wrap">
-  <h2>Want an early look?</h2>
-  <a class="btn primary lg" href="mailto:contact@unobvious.in?subject=Early%20access">Ask for early access</a>
-  <p class="caption">contact@unobvious.in</p>
-</div></section>
+<section class="close dark" aria-labelledby="close-h">
+  <div class="plate" style="background-image:url(assets/media/bg/amber-horizon.webp)" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
+  <div class="wrap close-row">
+    <div><h2 id="close-h" class="h2">Want an early look?</h2><p class="m">Private alpha · small on purpose · contact@unobvious.in</p></div>
+    <div class="ctas"><a class="pill pill-hot" href="mailto:contact@unobvious.in?subject=Early%20access">Ask for early access</a><a class="pill pill-line" href="about.html">About the lab</a></div>
+  </div>
+</section>
 
 </main>
-<footer class="site-foot">
-<div class="f-ticker" aria-hidden="true"><div class="f-ticker-track"><span>Press</span><i></i><span>Speak</span><i></i><span>Sort</span><i></i><span>Ask first</span><i></i><span>Look up</span><i></i><span>Press</span><i></i><span>Speak</span><i></i><span>Sort</span><i></i><span>Ask first</span><i></i><span>Look up</span><i></i><span>Press</span><i></i><span>Speak</span><i></i><span>Sort</span><i></i><span>Ask first</span><i></i><span>Look up</span><i></i><span>Press</span><i></i><span>Speak</span><i></i><span>Sort</span><i></i><span>Ask first</span><i></i><span>Look up</span><i></i></div></div>
-<div class="f-sign"><canvas class="f-dots" aria-hidden="true"></canvas>
-<p class="f-hint"><span class="h-fine">Move across it. Press anywhere.</span><span class="h-touch">Tap anywhere.</span></p>
-<a class="f-top" href="#"><span class="f-top-ic" aria-hidden="true">↑</span>Back to top</a></div>
-<dl class="f-facts">
-<div><dt>Local time</dt><dd data-clock>Bengaluru</dd></div>
-<div><dt>Coordinates</dt><dd>12.97° N, 77.59° E</dd></div>
-<div><dt>Now</dt><dd><span class="f-pulse" aria-hidden="true"></span><span>Experiment 001, private alpha</span></dd></div>
-<div><dt>Write to us</dt><dd class="f-mail"><span class="f-addr">contact@unobvious.in</span><button type="button" class="f-copy-btn">Copy</button><span class="f-copied visually-hidden" aria-live="polite"></span></dd></div>
-</dl>
-<div class="f-stack">
-<a class="f-brand" href="index.html" aria-label="Unobvious, home"><svg class="f-mark" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10.25" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg><span>Unobvious</span></a>
-<p class="f-tag">An independent lab in Bengaluru, working on technology that gives people their attention back.</p>
-<nav aria-label="Footer"><ul class="f-links"><li><a href="index.html">Lab</a></li><li><a href="os.html" aria-current="page">Unobvious OS</a></li><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="mailto:contact@unobvious.in?subject=Early%20access">Contact</a></li></ul></nav>
-<p class="f-copy">© 2026 Avaia Innovations (OPC) Private Limited</p>
-</div></footer>
-<script src="assets/triage.js"></script><script src="assets/ui.js"></script><script src="assets/footer.js"></script></body></html>
+<footer class="dark" style="padding:0 var(--gut)"><div class="wrap">
+<div class="foot"><div><a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="square"><path d="M8 22V8h14M42 8h14v14M56 42v14H42M22 56H8V42"/></g><circle cx="32" cy="32" r="9" fill="#FFBF65"/></svg>Unobvious</a><p>An independent lab in Bengaluru. Quiet technology that takes the mess in your head and gives you back the meaning.</p></div>
+<nav aria-label="Footer"><ul><li><a href="index.html">Lab</a></li><li><a href="os.html">Unobvious OS</a></li><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="mailto:contact@unobvious.in?subject=Early%20access">Contact</a></li></ul></nav></div>
+<div class="strip m"><span>© 2026 Avaia Innovations (OPC) Private Limited</span><span>Bengaluru · 12.97° N 77.59° E</span><a class="top" href="#">Back to top ↑</a></div>
+</div><p class="bigword" aria-hidden="true">Unobvious</p></footer>
+<script src="assets/site.js"></script></body></html>

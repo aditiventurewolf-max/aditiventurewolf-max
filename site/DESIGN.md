@@ -229,17 +229,21 @@ Calm, plain, on your side. Short sentences, ordinary words. Say what happens, an
 
 | Path | What |
 |---|---|
-| `home-7.html`, `assets/focus.css`, `assets/focus.js` | Current direction |
-| `brand.html` | Brand book |
-| `assets/brand/` | Logo SVGs |
-| `assets/media/bg/` | Light plates |
-| `assets/media/device-hero.webp`, `assets/media/spin/` | Product render (stand-in) |
-| `src/make_backgrounds.py` | Plate generator |
-| `src/build.py` | Builds all pages; set `PROTOTYPE=False` before launch |
+| `index.html` | Home: the six-act story (`assets/showcase.css`, `assets/showcase.js`) |
+| `os.html` | Unobvious OS: focus hero, messy-note demo, trust, day, FAQ |
+| `about.html` | Manifesto that assembles from scattered notes |
+| `privacy.html`, `terms.html`, `404.html` | Legal pages and "lost in the mess" |
+| `assets/site.css`, `assets/site.js` | Shared styles and behaviour for every page |
+| `brand.html`, `assets/brand/` | Brand book and logo SVGs |
+| `assets/media/bg/` | Light plates (`src/make_backgrounds.py`) |
+| `assets/media/device-hero.webp` | Product render (stand-in) |
+| `src/` | Page sources; `python3 src/build.py` builds everything |
+
+The earlier home variations (1–7) were retired when the Focus direction and the showcase story went live. They remain in git history.
 
 ## 11. Open decisions
 
 - **Palette:** Amber (recommended) or Cinema as primary.
 - **Logo:** confirm the Focus route, then outline the wordmark for print.
 - **Real assets:** replace the device render and add real photography.
-- **Rollout:** carry the Focus direction to the Unobvious OS page, About and legal pages, then retire Homes 1–6.
+- **Real details for the demo:** the brain-dump names (Rohan, the meetup, the fellowship) are placeholders.

@@ -1,5 +1,0 @@
-<section class="final"><div class="wrap">
-  <h2>Want an early look?</h2>
-  <a class="btn primary lg" href="{{JOIN}}">Ask for early access</a>
-  <p class="caption">{{EMAIL}}</p>
-</div></section>
